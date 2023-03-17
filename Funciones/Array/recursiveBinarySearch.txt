@@ -1,0 +1,18 @@
+int[] array: Array a ordenar
+int left: cota inferior a ordenar
+int right: cota superior
+int target: num a buscar
+
+public static int recursiveBinarySearch(int[] array, int left, int right, int target) {
+            if (!(right >= left))
+                return -1;
+            else {
+                int mid = left + (right - left) / 2;
+                if (array[mid] < target) 
+                    return recursiveBinarySearch(array, mid + 1, right, target);
+                else if (array[mid] > target) 
+                    return recursiveBinarySearch(array, left, mid - 1, target);
+                else
+                    return mid;
+            }
+        }

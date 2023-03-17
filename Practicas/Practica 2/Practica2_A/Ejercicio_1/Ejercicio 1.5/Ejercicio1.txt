@@ -1,0 +1,13 @@
+Modifique los métodos para que sean métodos de clase.
+1.5.1. ¿Qué cambios tiene que realizar en la definición del método?
+1.5.2. ¿Qué cambios tiene que realizar en la invocación a los métodos?
+
+
+Los metodos de instancia son aquellos metodos de una clase donde es necesario instanciar la clase para poder utilizar el objeto.
+Los metodos de clase, a diferencia de los metodos de instancia, no es necesario ya que los mismos son metodos static.
+
+RTA 1.5.1: Los cambios necesarios para pasar de un metodo de instancia a uno de clase en la definicion del metodo es necesario agregar luego del modificador de acceso y anterior al tipo de retorno del metodo.
+
+RTA 1.5.2: Los cambios a realizar en la invocacion de los metodos es:
+a. No es necesario crear un objeto.
+b. No es necesario llamarlos como un metodo de un objeto.
