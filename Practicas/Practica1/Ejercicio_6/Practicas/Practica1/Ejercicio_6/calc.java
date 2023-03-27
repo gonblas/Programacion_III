@@ -1,3 +1,5 @@
+package Practicas.Practica1.Ejercicio_6;
+
 import java.util.Scanner;
 
     public class calc{
