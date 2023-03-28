@@ -1,4 +1,4 @@
-package Practicas.Practica3.Practica3_A;
+package List.ListInt;
 /**
  * Esta clase representa un nodo de la lista de enteros enlazada.
  * */

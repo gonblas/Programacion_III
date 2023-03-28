@@ -1,4 +1,4 @@
-package Practicas.Practica3.Practica3_A;
+package List.ListInt;
 /**
  * La clase ListaDeEnterosConArreglos es una ListaDeEnteros con capacidad fija y
  * limitada.

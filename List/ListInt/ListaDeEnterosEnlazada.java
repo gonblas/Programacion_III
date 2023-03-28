@@ -1,4 +1,4 @@
-package Practicas.Practica3.Practica3_A;
+package List.ListInt;
 
 /**
  * La clase ListaDeEnterosEnlazada es una ListaDeEnteros, donde los elementos de

@@ -1,8 +1,8 @@
-package Practicas.Practica1.Ejercicio_6;
+package Practicas.Practica1;
 
 import java.util.Scanner;
 
-    public class calc{
+    public class Ejercicio6{
         public static void main(String[] args) {
             Scanner in = new Scanner(System.in);
             

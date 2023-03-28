@@ -1,4 +1,5 @@
 package Practicas.Practica3.Practica3_A;
+import List.ListInt.ListaDeEnterosEnlazada;
 
 public class Ejercicio2 {
     public static void main(String[] args) {
