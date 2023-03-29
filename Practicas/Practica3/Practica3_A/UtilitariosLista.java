@@ -1,5 +1,5 @@
 package Practicas.Practica3.Practica3_A;
-import List.ListInt.ListaDeEnterosEnlazada;
+import PrograIII.ListInt.ListaDeEnterosEnlazada;
 
 public class UtilitariosLista {
     public static ListaDeEnterosEnlazada mergeSort(ListaDeEnterosEnlazada lista) {

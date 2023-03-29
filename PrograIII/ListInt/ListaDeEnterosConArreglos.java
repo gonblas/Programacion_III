@@ -1,4 +1,4 @@
-package List.ListInt;
+package PrograIII.ListInt;
 /**
  * La clase ListaDeEnterosConArreglos es una ListaDeEnteros con capacidad fija y
  * limitada.

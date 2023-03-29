@@ -1,4 +1,4 @@
-package List.ListInt;
+package PrograIII.ListInt;
 
 /**
  * La clase ListaDeEnterosEnlazada es una ListaDeEnteros, donde los elementos de

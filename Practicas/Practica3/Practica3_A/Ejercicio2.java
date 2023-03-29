@@ -1,5 +1,5 @@
 package Practicas.Practica3.Practica3_A;
-import List.ListInt.ListaDeEnterosEnlazada;
+import PrograIII.ListInt.ListaDeEnterosEnlazada;
 
 public class Ejercicio2 {
     public static void main(String[] args) {
@@ -9,9 +9,8 @@ public class Ejercicio2 {
         l.agregarFinal(3);
         l.agregarFinal(309);
         ListaDeEnterosEnlazada l2 = l.ordenar();
-        while(!l2.fin()){
-            System.out.println(l2.proximo());
-        }
+
+        System.out.println(l2.toString());
     }
     
 }
