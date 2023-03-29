@@ -4,7 +4,7 @@ import PrograIII.ListGeneric.Pila;
 
 public class Ejercicio4 {
     public static void main(String[] args) {
-        String cadena = "()";
+        String cadena = "";
         if (testBalanceo(cadena))
             System.out.println("La cadena es armoniosa.");
         else

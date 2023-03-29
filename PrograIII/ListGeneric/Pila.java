@@ -2,34 +2,27 @@ package PrograIII.ListGeneric;
 
 public class Pila<T> {
     private ListaGenericaEnlazada<T> pila;
+
+    public Pila() {
+        pila = new ListaGenericaEnlazada<>();
+    }
     
     public void apilar(T elem) {
-        if(this.esVacia())
-            pila = new ListaGenericaEnlazada<T>();
         pila.agregarInicio(elem);
     }
 
     public T desapilar() {
-        if (!this.esVacia()) {
-            T dato = pila.elemento(0);
-            pila.eliminarEn(0);
-            if(pila.tamanio()==0)
-                pila = null;
-            return dato;
-        }
-        
-        return null;
+        T dato = pila.elemento(0);
+        pila.eliminarEn(0);
+        return dato;
     }
     
     public T tope() {
-        if (!this.esVacia()) {
-            T dato = pila.elemento(0);
-            return dato;
-        }
-        return null;
+        T dato = pila.elemento(0);
+    return dato;
     }
     
     public boolean esVacia() {
-        return this.pila == null;
+        return pila.esVacia();
     }
 }
