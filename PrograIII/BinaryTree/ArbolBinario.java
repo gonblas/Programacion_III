@@ -111,18 +111,42 @@ public class ArbolBinario<T> {
 	}
 
 	public boolean esCompleto() {
-		boolean estado = true;
-		if (!this.esVacio()) {
-			if (this.tieneHijoDerecho() && !this.tieneHijoIzquierdo()) {
-				return false;
-			}
-			if (this.tieneHijoIzquierdo())
-				estado = this.hijoIzquierdo.esCompleto();
-			if (this.tieneHijoDerecho())
-				estado = this.hijoDerecho.esCompleto();
-		}
-		return estado;
-	}
+        // si el arbol es vacio o es hoja es completo
+        if (this.esVacio()) {
+            return true;
+        }
+        Cola<ArbolBinario<T>> cola = new Cola<ArbolBinario<T>>();
+        cola.encolar(this);
+        boolean flag = false;
+        ArbolBinario<T> arbol;
+        while (!cola.esVacia()) {
+            // desencolo el arbol
+            arbol = cola.desencolar();
+            // si hemos encotrado un nodo no lleno antes y el nodo actual no es hoja
+            // el arbol no es completo
+            if (flag && (!arbol.esHoja()))
+                return false;
+
+            // si el nodo actual no tiene hijo izquierdo y tiene hijo derecho
+            // el arbol no es completo
+            if (!arbol.tieneHijoIzquierdo() && arbol.tieneHijoDerecho())
+                return false;
+
+            // si el nodo actual tiene hijo izquierdo lo encolo
+            if (arbol.tieneHijoIzquierdo())
+                cola.encolar(arbol.getHijoIzquierdo());
+            else
+                flag = true;
+
+            // si el nodo actual tiene hijo derecho lo encolo
+            if (arbol.tieneHijoDerecho())
+                cola.encolar(arbol.getHijoDerecho());
+            else
+                flag = true;
+
+        }
+        return true;
+    }
 
 	// imprime el arbol en preorden  
 	public void printPreorden() {
