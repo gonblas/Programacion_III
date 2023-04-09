@@ -230,7 +230,7 @@ public class ArbolBinario<T> {
 	// 	return l;
 	// }
 
-	public ListaGenerica<T> frontera2() {
+	public ListaGenerica<T> frontera() {
 		ListaGenericaEnlazada<T> l = new ListaGenericaEnlazada<T>();
 		fronteraRecursivo(l);
 		return l;

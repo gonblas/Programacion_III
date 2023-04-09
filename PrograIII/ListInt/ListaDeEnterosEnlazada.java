@@ -193,7 +193,7 @@ public class ListaDeEnterosEnlazada extends ListaDeEnteros {
 		}
 		Integer dato=null;
 		while (!aux.esVacia()) {
-		    Integer min = 9999;
+		    Integer min = Integer.MAX_VALUE;
 		    aux.comenzar();
 		    while (!aux.fin()) {
 			    dato = aux.proximo();
