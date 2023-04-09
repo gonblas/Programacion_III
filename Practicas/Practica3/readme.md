@@ -46,11 +46,11 @@ ___
 
 **4. MergeSort.** *La estrategia del MergeSort consiste en ordenar una lista dividiendo “el
 problema” (la lista a ordenar) recursivamente hasta llegar a un punto en que no se puede dividir más. Luego, a medida que se vuelve de la recursión, se devuelven listas ya ordenadas y simplemente se combinan. Puede leer más acerca del mergesort en:*
-  [MergeSort]((https://www.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/overview-of-merge-sort) "MergeSort - Khan Academy")
+  [MergeSort](https://www.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/overview-of-merge-sort "MergeSort - Khan Academy")
 - **i.** *Cree en el paquete prog3.util una clase llamada UtilitariosLista, e implemente el método **mergeSort.***
 
 **5. JUnit (OPCIONAL)** 
-- *Las librerías en el proyecto, fueron descargadas del sitio [Librerias JUnit]((https://github.com/junit-team/junit/releases) "JUnit 4.13.2") y corresponen a JUnit, un conjunto de clases que permiten escribir “pruebas”.*
+- *Las librerías en el proyecto, fueron descargadas del sitio [Librerias JUnit](https://github.com/junit-team/junit/releases "JUnit 4.13.2") y corresponen a JUnit, un conjunto de clases que permiten escribir “pruebas”.*
 - *En caso que no se encuentre incluída en su proyecto, incluya dicha librería (cree una carpeta lib de modo que la librería quede dentro de su proyecto).*
 - *Ejecute la clase ListaDeEnterosEnlazadaJUnitTest y verifique que los Test se ejecutan exitosamente.*
 
@@ -87,7 +87,7 @@ ___
 **4. String de caracteres.**  *Considere que un string de caracteres {[]} está balanceado si cada símbolo de apertura se corresponde con un símbolo de cierre de manera “armoniosa”. Por ejemplo, "{( ) [ ( ) ] }" está balanceado, pero "( [ ) ]" no lo está.*
 
 **a.** *Proponga una solución a la verificación del balanceo de un String e indique qué estructura de datos de las implementadas en esta práctica elegiría.”.*
->**Nota:** * puede usar el método **charAt(..)** de la clase String para recuperar cada caracter del String original.*
+>**Nota:** *puede usar el método **charAt(..)** de la clase String para recuperar cada caracter del String original.*
 
 **b.** *Cree una clase llamada **TestBalanceo** e implemente un método cuyo objetivo es determinar si un String dado está balanceado o no. Para implementarlo, deberá recorrer el String caracter por caracter y **usar la estructura de datos elegida** en el punto a.*
 

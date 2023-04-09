@@ -6,16 +6,16 @@ vinculados con Algoritmos y Programación, permitiéndole desarrollar un estudio
 ___
 
 ## ***Practicas***
-* [Practica 1]((/Practica1) "Practica 1"): Introduccion al entorno Eclipse
-* [Practica 2]((/Practica2) "Practica 2"): Conceptos Básicos y Herencia
-* [Practica 3]((/Practica3) "Practica 3"): Listas
-*  [Practica 4]((/Practica4) "Practica 4"): Arboles binarios
+* [Practica 1](Practicas/Practica1 "Practica 1"): Introduccion al entorno Eclipse
+* [Practica 2](Practicas/Practica2 "Practica 2"): Conceptos Básicos y Herencia
+* [Practica 3](Practicas/Practica3 "Practica 3"): Listas
+*  [Practica 4](Practicas/Practica4 "Practica 4"): Arboles binarios
 ___
 
 ## ***Enlaces Utiles***
 
-[Catedra - Programacion III]((https://asignaturas.linti.unlp.edu.ar/course/view.php?id=355) "Pagina de la catedra")
+[Catedra - Programacion III](https://asignaturas.linti.unlp.edu.ar/course/view.php?id=355 "Pagina de la catedra")
 
-[Metodologia - Programacion III]((https://ic.info.unlp.edu.ar/wp-content/uploads/2022/02/Programacion-III.pdf) "Metodologia de la materia")
+[Metodologia - Programacion III](https://ic.info.unlp.edu.ar/wp-content/uploads/2022/02/Programacion-III.pdf "Metodologia de la materia")
 
 ___

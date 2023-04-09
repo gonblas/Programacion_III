@@ -47,7 +47,7 @@ ___
 **d.** ***esCompleto(): boolean**. Devuelve true si el árbol es completo. Un árbol binario de altura h es completo si es lleno hasta el nivel (h-1) y el nivel h se completa de izquierda a derecha.*
 
 **4. JUnit (prueba de la implementación de los ejercicios anteriores)** 
-**a.** *Descargue del sitio [Librerias JUnit]((https://github.com/junit-team/junit4/releases) "JUnit 4.13.2") el achivo .jar (librería recomendada version 4.7) correspondiente a JUnit ó descarguelo de la página de la cátedra.*
+**a.** *Descargue del sitio [Librerias JUnit](https://github.com/junit-team/junit4/releases "JUnit 4.13.2") el achivo .jar (librería recomendada version 4.7) correspondiente a JUnit ó descarguelo de la página de la cátedra.*
 **b.** *Incluya dicha librería en su proyecto (cree una carpeta lib de modo que la librería quede dentro de su proyecto).*
 **c.** *Ejecute la clase ArbolBinarioTest y verifique que los Test se ejecutan exitosamente.*
 
