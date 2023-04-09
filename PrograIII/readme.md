@@ -1,4 +1,4 @@
-# ***Progra III***: 
+# ***Progra III*** 
 
 ## ***¿Que se encuentra en esta carpeta?***
 Se encuentran todas las clases provistas por la catedra de Programacion III para poder realizar las practicas semanales. Ademas, se encuentran las clases pedidas en las practicas, las mismas tambien son utiles para toda la cursada, por lo tanto, han sido incluidas.

@@ -6,10 +6,10 @@ vinculados con Algoritmos y Programación, permitiéndole desarrollar un estudio
 ___
 
 ## ***Practicas***
-* [Practica 1]((https://github.com/gonblas/Programacion_III/tree/main/Practicas/Practica1) "Practica 1"): Introduccion al entorno Eclipse
-* [Practica 2]((https://github.com/gonblas/Programacion_III/tree/main/Practicas/Practica2) "Practica 2"): Conceptos Básicos y Herencia
-* [Practica 3]((https://github.com/gonblas/Programacion_III/tree/main/Practicas/Practica3) "Practica 3"): Listas
-*  [Practica 4]((https://github.com/gonblas/Programacion_III/tree/main/Practicas/Practica4) "Practica 4"): Arboles binarios
+* [Practica 1]((/Practica1) "Practica 1"): Introduccion al entorno Eclipse
+* [Practica 2]((/Practica2) "Practica 2"): Conceptos Básicos y Herencia
+* [Practica 3]((/Practica3) "Practica 3"): Listas
+*  [Practica 4]((/Practica4) "Practica 4"): Arboles binarios
 ___
 
 ## ***Enlaces Utiles***
