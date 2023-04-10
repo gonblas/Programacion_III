@@ -6,17 +6,25 @@ import PrograIII.ListGeneric.ListaGenericaEnlazada;
 
 public class Ejercicio5 {
     public static void main(String[] args) {
-        ArbolBinario<String> arbolBinarioX=new ArbolBinario<String>("¿Tiene 4 patas?");
-        ArbolBinario<String> hijoIzquierdoX=new ArbolBinario<String>("¿Se mueve?");
-        hijoIzquierdoX.agregarHijoIzquierdo(new ArbolBinario<String>("¿Ladra?"));
-        
-        hijoIzquierdoX.agregarHijoDerecho(new ArbolBinario<String>("Es una mesa"));
-        ArbolBinario<String> hijoDerechoX = new ArbolBinario<String>("¿Tiene alguna pata?");
-        arbolBinarioX.agregarHijoIzquierdo(hijoIzquierdoX);
-        arbolBinarioX.agregarHijoDerecho(hijoDerechoX);
+        ArbolBinario<String> arbolBinarioB;
+        arbolBinarioB = new ArbolBinario<String>("¿Tiene 4 patas?");
+		ArbolBinario<String> hijoIzquierdoB = new ArbolBinario<String>("¿Se mueve?");
+		ArbolBinario<String> h = new ArbolBinario<>("¿Es de madera?");
+		ArbolBinario<String> hh = new ArbolBinario<>("¿Es rojo?");
+		hh.agregarHijoDerecho(new ArbolBinario<String>("Sapo"));
+		h.agregarHijoIzquierdo(hh);
+		h.agregarHijoDerecho(new ArbolBinario<String>("MESA"));
+
+		hijoIzquierdoB.agregarHijoDerecho(h);
+		ArbolBinario<String> hhijoIzquierdoB = new ArbolBinario<String>("¿Ladra?");
+		hhijoIzquierdoB.agregarHijoIzquierdo(new ArbolBinario<String>("Es un perro"));
+		hhijoIzquierdoB.agregarHijoDerecho(new ArbolBinario<String>("Es un gato"));
+		hijoIzquierdoB.agregarHijoIzquierdo(hhijoIzquierdoB);
+		arbolBinarioB.agregarHijoIzquierdo(hijoIzquierdoB);
+		arbolBinarioB.agregarHijoDerecho(new ArbolBinario<String>("Es una persona"));
 
         ListaGenericaEnlazada<ListaGenericaEnlazada<String>> l = Adivinanza
-                .secuenciaConMasPreguntasVersion2(arbolBinarioX);
+                .secuenciaConMasPreguntasVersion2(arbolBinarioB);
         
         for (int i = 0; i < l.tamanio(); i++){
             System.out.println(l.elemento(i).toString());
