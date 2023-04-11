@@ -14,9 +14,9 @@ public class Test {
         a.getHijos().elemento(1).getHijos().elemento(0).agregarHijo(new ArbolGeneral<Integer>(8));
         a.getHijos().elemento(1).getHijos().elemento(0).agregarHijo(new ArbolGeneral<Integer>(9));
 
-        System.out.println("Altura del arbol: " + a.altura()); //3
-        System.out.println("Include: " + a.include(6)); //true
-        System.out.println("Nivel: " + a.nivel(8)); //2
-        System.out.println("Ancho: " + a.ancho());
+        // System.out.println("Altura del arbol: " + a.altura()); //3
+        // System.out.println("Include: " + a.include(6)); //true
+        // System.out.println("Nivel: " + a.nivel(8)); //2
+        System.out.println("Ancho: " + a.ancho()); //3
     }
 }

@@ -2,7 +2,6 @@ package PrograIII.GeneralTree;
 
 import PrograIII.ListGeneric.ListaGenerica;
 import PrograIII.ListGeneric.ListaGenericaEnlazada;
-import PrograIII.BinaryTree.ArbolBinario;
 import PrograIII.ListGeneric.Cola;
 
 public class ArbolGeneral<T> {
@@ -102,8 +101,9 @@ public class ArbolGeneral<T> {
 		return lvl;
 	}
 
-
 	public int ancho() {
+		if(!this.tieneHijos())
+			return 1;
 		ArbolGeneral<T> a = null;
 		Cola<ArbolGeneral<T>> cola = new Cola<ArbolGeneral<T>>();
 		cola.encolar(this);
@@ -131,20 +131,43 @@ public class ArbolGeneral<T> {
 			return max;
 		}
 
-	public boolean include(T dato) {
-		boolean flag = false;
-		if (this.getDato() == dato) {
-			flag = true;
-		}
-		if (this.tieneHijos()) {
-			ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
-			hijos.comenzar();
-			while (!hijos.fin() && !flag) {
-				flag = hijos.proximo().include(dato);
-				if(flag)
-					return true;
+		public boolean include(T dato) {
+			boolean flag = false;
+			if (this.getDato() == dato) {
+				flag = true;
 			}
+			if (this.tieneHijos()) {
+				ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
+				hijos.comenzar();
+				while (!hijos.fin() && !flag) {
+					flag = hijos.proximo().include(dato);
+					if (flag)
+						return true;
+				}
+			}
+			return flag;
 		}
-		return flag;
-	}
+
+	public void ImprimirPorNiveles() {
+        ArbolGeneral<T> arbol = null;
+        Cola<ArbolGeneral<T>> cola = new Cola<ArbolGeneral<T>>();
+        cola.encolar(this);
+        cola.encolar(null);
+        while (!cola.esVacia()) {
+            arbol = cola.desencolar();
+            if (arbol != null) {
+                System.out.print(arbol.getDato() + " ");
+                if (arbol.tieneHijos()) {
+                    ListaGenerica<ArbolGeneral<T>> l = arbol.getHijos();
+                    l.comenzar();
+                    while (!l.fin()) {
+                        cola.encolar(l.proximo());
+                    }
+                }
+            } else if (!cola.esVacia()) {
+                System.out.println();
+                cola.encolar(null);
+            }
+        }
+    }
 }

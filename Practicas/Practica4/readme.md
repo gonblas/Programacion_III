@@ -10,7 +10,7 @@ ___
 
 ### ***Parte A - Árboles binarios***
 
-**1.** *1. Analice la implementación en JAVA de la clase ArbolBinario brindada por la cátedra*
+**1.** *Analice la implementación en JAVA de la clase ArbolBinario brindada por la cátedra*
 
 **a** *Realice el diagrama del siguiente árbol. En particular indique **cómo quedan representados los nodos que son HOJA. ¿Cómo se representa el hijo izquierdo y el hijo derecho de una HOJA?***
 

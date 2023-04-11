@@ -61,11 +61,11 @@ vamos a agregar. Si pudo eliminarlo devuelve true, false en caso contrario.
 - **tope():** Devuelve el elemento del tope de la cola sin sacarlo de la misma.
 - **esVacia():** Devuelve true si la cola esta vacia, false en caso contrario.
 
-#### ***NodoGenerico:** Esta clase representa un nodo de la lista generica. Solo tiene los getters y setters.
+#### **NodoGenerico:** Esta clase representa un nodo de la lista generica. Solo tiene los getters y setters.
 
 ___
 ### ***BinaryTree***
-#### ***ArbolBinario:** Esta clase representa un arbol binario que acepta tipos genericos.
+#### **ArbolBinario:** Esta clase representa un arbol binario que acepta tipos genericos.
 - **ArbolBinario(T dato):*Constructor que inicializa a la raiz con un valor.
 - **getDato():** Devuelve el dato que almacena el nodo del arbol.
 - **setDato(T dato):** Para cambiar el dato de un nodo del arbol.
@@ -89,8 +89,26 @@ ___
 - **frontera():** Devuelve una lista con los nodos hojas.
 - **contarHojas():** Devuelve la cantidad de hojas del arbol.
 
-#### ***Adivinanza:** Esta clase es parte de un ejercicio.
+#### **Adivinanza:** Esta clase es parte de un ejercicio.
 - **secuenciaConMasPreguntas(ArbolBinario<String> abinario):** Devuelve una lista de Strings con el camino mas largo desde la raiz hasta una hoja (Solo una).
 - **secuenciaConMasPreguntasVersion2(ArbolBinario<String> abinario):** Devuelve una lista de listas Strings con los camino mas largos desde la raiz hasta una hoja (si existe mas de uno con la mayor longitud).
-
+### ***GeneralTree***
+#### **ArbolGeneral:** Esta clase posee un tipo de arbol general generico.
+- **ArbolGeneral(T dato, ListaGenerica<ArbolGeneral<T>> hijos):** Constructor que inicializa los valores de la raiz y sus hijos.
+- **ArbolGeneral(T dato):** Constructor que inicializa el valor de la raiz.
+- **getDato():** Devuelve el dato almacenado por el nodo.
+- **setDato():** Permite modificar el dato almacenado por el nodo.
+- **getHijos():** Permite obtener la lista de hijos de un nodo.
+- **setHijos():** Permite cambiar la lista de hijos de un nodo.
+- **agregarHijo(ArbolGeneral<T> unHijo):** Agrega un hijo al final de la lista. 
+- **esHoja():** Devuelve true si el nodo es una hoja, false en caso contrario. 
+- **tieneHijos():** Devuelve true si el nodo tiene hijos, false en caso contrario.
+- **esVacio():** Devuelve true si el arbol es vacio (se toma al arbol con raiz como el nodo que estamos recorriendo), false en caso contrario. 
+- **eliminarHijo(ArbolGeneral<T> hijo):** Elimina un hijo pasado por parametros si el mismo es un hijo.
+- **preOrden():** Recorre e imprime el arbol en preorden. 
+- **altura():** 
+- **nivel(T dato):** Devuelve el nivel del nodo encontrado en caso afirmativo, en caso contrario devuelve false.
+- **ancho():** Devuelve el ancho maximo de un arbol.
+- **include(T dato):** Devuelve true si el dato recibido se encuentra en el arbol, false en caso contrario.
+- **ImprimirPorNiveles():** Imprime el arbol por niveles.
 ___
