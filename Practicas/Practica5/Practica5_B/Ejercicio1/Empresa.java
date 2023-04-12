@@ -103,6 +103,9 @@ public class Empresa {
     }
     
     public void reemplazarPresidente() {
+        // if (!empleados.tieneHijos()) {
+        //     empleados = null;
+        // }
         ArbolGeneral<Empleado> arbol = this.empleados;
         while (arbol != null) {
             ListaGenerica<ArbolGeneral<Empleado>> l = arbol.getHijos();

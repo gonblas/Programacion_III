@@ -17,7 +17,7 @@ public class Ejercicio1 {
         
         Empresa e = new Empresa(a);
 
-        System.out.println("Cantidad de empleados en la categoria 1: " + e.empleadosPorCategoria(3));
+        System.out.println("Cantidad de empleados en la categoria 3: " + e.empleadosPorCategoria(3));
         System.out.println("Categoria con mayor cantidad de empleados: " + e.categoriaConMasEmpleados());
         System.out.println("Cantidad total de empleados: " + e.cantidadTotalDeEmpleados());
 

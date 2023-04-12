@@ -131,22 +131,22 @@ public class ArbolGeneral<T> {
 			return max;
 		}
 
-		public boolean include(T dato) {
-			boolean flag = false;
-			if (this.getDato() == dato) {
-				flag = true;
-			}
-			if (this.tieneHijos()) {
-				ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
-				hijos.comenzar();
-				while (!hijos.fin() && !flag) {
-					flag = hijos.proximo().include(dato);
-					if (flag)
-						return true;
-				}
-			}
-			return flag;
+	public boolean include(T dato) {
+		boolean flag = false;
+		if (this.getDato() == dato) {
+			flag = true;
 		}
+		if (this.tieneHijos()) {
+			ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
+			hijos.comenzar();
+			while (!hijos.fin() && !flag) {
+				flag = hijos.proximo().include(dato);
+				if (flag)
+					return true;
+			}
+		}
+		return flag;
+	}
 
 	public void ImprimirPorNiveles() {
         ArbolGeneral<T> arbol = null;
