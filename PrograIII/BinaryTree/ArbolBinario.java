@@ -122,7 +122,7 @@ public class ArbolBinario<T> {
         while (!cola.esVacia()) {
             // desencolo el arbol
             arbol = cola.desencolar();
-            // si hemos encotrado un nodo no lleno antes y el nodo actual no es hoja
+            // si encontramos un nodo no lleno antes y el nodo actual no es hoja
             // el arbol no es completo
             if (flag && (!arbol.esHoja()))
                 return false;
@@ -250,16 +250,14 @@ public class ArbolBinario<T> {
 	
 	public int contarHojas() {
 		int cont = 0;
-		if (!this.esHoja()) {
-			if (this.tieneHijoIzquierdo()) {
-				cont += hijoIzquierdo.contarHojas();
-			}
-			if (this.tieneHijoDerecho()) {
-				cont += hijoDerecho.contarHojas();
-			}
-		}
-		else {
+		if (this.esHoja()) {
 			return 1;
+		}
+		if (this.tieneHijoIzquierdo()) {
+			cont += hijoIzquierdo.contarHojas();
+		}
+		if (this.tieneHijoDerecho()) {
+			cont += hijoDerecho.contarHojas();
 		}
 		return cont;
 	}

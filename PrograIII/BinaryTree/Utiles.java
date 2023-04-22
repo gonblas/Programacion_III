@@ -6,13 +6,13 @@ import PrograIII.ListGeneric.ListaGenericaEnlazada;
 public class Utiles {
     public static int sumaMaximaVertical(ArbolBinario<Integer> tree) {
         if (tree != null) {
-            if(tree.esHoja())
-                return tree.getDato();
+            if(tree.esHoja()) 
+                return tree.getDato(); //Devuelvo el valor de la hoja
             
-            int sumIzq = sumaMaximaVertical(tree.getHijoIzquierdo());
-            int sumDer = sumaMaximaVertical(tree.getHijoDerecho());
+            int sumIzq = sumaMaximaVertical(tree.getHijoIzquierdo()); //Sumo el camino izquierdo
+            int sumDer = sumaMaximaVertical(tree.getHijoDerecho()); //Sumo el camino derecho
 
-            if (sumIzq > sumDer) {
+            if (sumIzq > sumDer) { //Retorno la mayor de las sumas incluyendo el dato del nodo actual
                 return tree.getDato() + sumIzq;
             }
             else

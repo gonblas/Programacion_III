@@ -5,24 +5,26 @@ import PrograIII.ListGeneric.ListaGenericaEnlazada;
 
 public class Adivinanza {
     public static ListaGenericaEnlazada<String> secuenciaConMasPreguntas(ArbolBinario<String> abinario) {
-        if (abinario.esVacio()) {
+        if (abinario.esVacio()) { //Si es vacio la lista es vacia
             return null;
         }
 
-        if (abinario.esHoja()) {
+        if (abinario.esHoja()) { //Devuelvo una lista con el dato de la hoja
             ListaGenericaEnlazada<String> result = new ListaGenericaEnlazada<String>();
             result.agregarInicio(abinario.getDato());
             return result;
         }
-
+        
         ListaGenericaEnlazada<String> izq = new ListaGenericaEnlazada<>();
         ListaGenericaEnlazada<String> der = new ListaGenericaEnlazada<>();
-
+        
+        //Llamo recursivamente y almaceno en las listas izq y der
         if (abinario.tieneHijoIzquierdo())
             izq = secuenciaConMasPreguntas(abinario.getHijoIzquierdo());
         if (abinario.tieneHijoDerecho())
             der = secuenciaConMasPreguntas(abinario.getHijoDerecho());
-
+        
+            //Comparo aquel que sea mayor y lo retorno
         if (izq.tamanio() >= der.tamanio()) {
             izq.agregarInicio("SI");
             izq.agregarInicio(abinario.getDato());

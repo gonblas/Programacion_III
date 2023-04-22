@@ -1,4 +1,4 @@
-package Practicas.Practica5.Practica5_B.Ejecicio2;
+package Practicas.Practica5.Practica5_B.Ejercicio2;
 
 import PrograIII.GeneralTree.ArbolGeneral;
 import PrograIII.ListGeneric.ListaGenerica;

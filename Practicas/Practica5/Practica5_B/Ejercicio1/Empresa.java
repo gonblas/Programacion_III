@@ -28,7 +28,7 @@ public class Empresa {
         while (!cola.esVacia()) {
             a = cola.desencolar();
             if (a != null) {
-                cant_empleados++;
+                cant_empleados++; //Cuento los empleados del nivel
                 if (a.tieneHijos()) {
                     ListaGenerica<ArbolGeneral<Empleado>> hijos = a.getHijos();
                     hijos.comenzar();
@@ -39,7 +39,7 @@ public class Empresa {
             } else {
                 if (!cola.esVacia()) {
                     cola.encolar(null);
-                    if(lvl == categoria)
+                    if(lvl == categoria) //Devuelvo los empleados contados si el nivel es el pedido
                         return cant_empleados;
                     lvl++;
                     cant_empleados = 0;
@@ -103,29 +103,24 @@ public class Empresa {
     }
     
     public void reemplazarPresidente() {
-        // if (!empleados.tieneHijos()) {
-        //     empleados = null;
-        // }
-        ArbolGeneral<Empleado> arbol = this.empleados;
-        while (arbol != null) {
-            ListaGenerica<ArbolGeneral<Empleado>> l = arbol.getHijos();
+        ArbolGeneral<Empleado> arbol = this.empleados; //Creo un arbol para recorrer
+        while (arbol != null) { //Recorro mientras el arbol no sea null, solo sirve para cuando la raiz es null
+            ListaGenerica<ArbolGeneral<Empleado>> hijos = arbol.getHijos();
             l.comenzar();
-            ArbolGeneral<Empleado> e = l.proximo();
-            while (!l.fin()) {
-                ArbolGeneral<Empleado> e2 = l.proximo();
-                if (e.getDato().getAntiguedad() < e2.getDato().getAntiguedad()) {
-                    e = e2;
+            ArbolGeneral<Empleado> e = hijos.proximo();
+            while (!hijos.fin()) { //Recorro la lista de hijos
+                ArbolGeneral<Empleado> e2 = hijos.proximo();
+                if (e.getDato().getAntiguedad() < e2.getDato().getAntiguedad()) { //Determino el hijo de mayor antiguedad
+                    e = e2; //Guardo en e el de mayor antiguedad
                 }
             }
-            e.getDato().setCategoria(e.getDato().getCategoria()-1);
-            arbol.setDato(e.getDato());
-            if (e.esHoja()) {
-                arbol.eliminarHijo(e);;
+            e.getDato().setCategoria(e.getDato().getCategoria()-1); //decremento al empleado que subira de categoria
+            arbol.setDato(e.getDato()); //Sobreescribo las datos con los del empleado que subira de categoria
+            if (e.esHoja()) { //Si es una hoja elimino, sino, sigo reemplazando
+                arbol.eliminarHijo(e);
                 break;
             }
-            arbol = e;
+            arbol = e; //Establezco que el nuevo a reemplazar es el que ascendio
         }
     }
-
-
 }

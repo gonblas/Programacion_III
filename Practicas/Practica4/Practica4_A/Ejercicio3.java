@@ -19,7 +19,7 @@ public class Ejercicio3 {
         System.out.println("La cantidad de hojas del arbol es " + arbolBinarioB.contarHojas());
 
         //Inciso b)
-        ListaGenerica<Integer> l = arbolBinarioB.frontera2();
+        ListaGenerica<Integer> l = arbolBinarioB.frontera();
         while (!l.fin()) {
             System.out.print(l.proximo() + " ");
         }
