@@ -1,6 +1,4 @@
-# ***Practica 2***: 
-## *Conceptos Básicos y Herencia*
-___
+# ***Practica 2***: *Conceptos Básicos y Herencia*
 
 ## ***Objetivos de la practica:***
 Que el alumno repase los conceptos necesarios para arrancar bien con la cursada.

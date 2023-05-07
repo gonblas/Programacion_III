@@ -1,6 +1,4 @@
-# ***Practica 1***: 
-## *Introduccion al entorno Eclipse*
-___
+# ***Practica 1***: *Introduccion al entorno Eclipse*
 
 ## ***Objetivos de la practica:***
 Que el alumno domine el entorno de Eclipse.

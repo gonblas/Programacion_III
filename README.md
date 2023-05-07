@@ -9,7 +9,11 @@ ___
 * [Practica 1](Practicas/Practica1 "Practica 1"): Introduccion al entorno Eclipse
 * [Practica 2](Practicas/Practica2 "Practica 2"): Conceptos Básicos y Herencia
 * [Practica 3](Practicas/Practica3 "Practica 3"): Listas
-*  [Practica 4](Practicas/Practica4 "Practica 4"): Arboles binarios
+* [Practica 4](Practicas/Practica4 "Practica 4"): Arboles binarios
+* [Practica 5](Practicas/Practica5 "Practica 5"): Arboles generales
+* [Practica 6](Practicas/Practica6 "Practica 6"): Tiempo de Ejecución
+* [Practica 7](Practicas/Practica7 "Practica 7"): Grafos
+
 ___
 
 ## ***Enlaces Utiles***

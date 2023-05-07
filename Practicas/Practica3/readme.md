@@ -1,6 +1,4 @@
-# ***Practica 3***: 
-## *Listas*
-___
+# ***Practica 3***: *Listas*
 
 ## ***Objetivos de la practica:***
 Que el alumno comprenda el uso de las listas con objetos utilizando sus conocimientos previos sobre listas.

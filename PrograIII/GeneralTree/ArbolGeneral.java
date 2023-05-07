@@ -14,7 +14,7 @@ public class ArbolGeneral<T> {
 		this(dato);
 		this.hijos = hijos;
 	}
-	
+
 	public ArbolGeneral(T dato) {
 		this.dato = dato;
 		this.hijos = new ListaGenericaEnlazada<ArbolGeneral<T>>();
@@ -44,11 +44,11 @@ public class ArbolGeneral<T> {
 	public boolean esHoja() {
 		return !this.tieneHijos();
 	}
-	
+
 	public boolean tieneHijos() {
 		return this.hijos != null && !this.hijos.esVacia();
 	}
-	
+
 	public boolean esVacio() {
 		return this.dato == null && !this.tieneHijos();
 	}
@@ -56,38 +56,38 @@ public class ArbolGeneral<T> {
 	public void eliminarHijo(ArbolGeneral<T> hijo) {
 		if (this.tieneHijos()) {
 			ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
-			if (hijos.incluye(hijo)) 
+			if (hijos.incluye(hijo))
 				hijos.eliminar(hijo);
 		}
 	}
-	
+
 	public ListaGenericaEnlazada<T> preOrden() {
 		return null;
 	}
-	
+
 	public int altura() {
 		int nivel = 0;
-		int max = Integer.MIN_VALUE; 
-			if (!this.tieneHijos()) { //Retorno el nivel 
-				return nivel;
+		int max = Integer.MIN_VALUE;
+		if (!this.tieneHijos()) { //Retorno el nivel 
+			return nivel;
+		}
+		ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
+		hijos.comenzar();
+		while (!hijos.fin()) { //Recorro y llamo con los hijos
+			nivel = hijos.proximo().altura() + 1; //Recibo el nivel de los hijos como 1 mayor al actual
+			if (nivel > max) { //Maximos
+				max = nivel;
 			}
-			ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
-			hijos.comenzar();
-			while (!hijos.fin()) { //Recorro y llamo con los hijos
-				nivel = hijos.proximo().altura() + 1; //Recibo el nivel de los hijos como 1 mayor al actual
-				if (nivel > max) { //Maximos
-					max = nivel;
-				}
-			}
+		}
 		if (max > nivel) //Retorno el mayor
 			return max;
 		return nivel;
 	}
 
 	public Integer nivel(T dato) {
-		int lvl = -1; 
+		int lvl = -1;
 		if (this.getDato() == dato) {
-			return lvl+1;
+			return lvl + 1;
 		}
 		if (this.tieneHijos()) {
 			ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
@@ -103,7 +103,7 @@ public class ArbolGeneral<T> {
 	}
 
 	public int ancho() {
-		if(!this.tieneHijos())
+		if (!this.tieneHijos())
 			return 1;
 		ArbolGeneral<T> a = null;
 		Cola<ArbolGeneral<T>> cola = new Cola<ArbolGeneral<T>>();
@@ -119,9 +119,9 @@ public class ArbolGeneral<T> {
 				while (!hijos.fin()) {
 					cola.encolar(hijos.proximo());
 				}
-			}
-			else{ if(!cola.esVacia()){
-					if(aux > max){ //Maximos
+			} else {
+				if (!cola.esVacia()) {
+					if (aux > max) { //Maximos
 						max = aux;
 					}
 					cola.encolar(null);
@@ -132,23 +132,36 @@ public class ArbolGeneral<T> {
 		return max;
 	}
 
+	// public boolean include(T dato) {
+	// 	boolean flag = false;
+	// 	if (this.getDato() == dato) { //Si el dato esta incluido
+	// 		flag = true;
+	// 	}
+	// 	if (this.tieneHijos()) { //Llamo con los hijos
+	// 		ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
+	// 		hijos.comenzar();
+	// 		while (!hijos.fin() && !flag) { //Mientras no encontremos el dato y tenga hijos
+	// 			flag = hijos.proximo().include(dato);
+	// 			if (flag) //Si lo encontramos
+	// 				return true;
+	// 		}
+	// 	}
+	// 	return flag;
+	// }
+
 	public boolean include(T dato) {
 		boolean flag = false;
 		if (this.getDato() == dato) { //Si el dato esta incluido
-			flag = true;
+			return true;
 		}
-		if (this.tieneHijos()) { //Llamo con los hijos
-			ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
-			hijos.comenzar();
-			while (!hijos.fin() && !flag) { //Mientras no encontremos el dato y tenga hijos
-				flag = hijos.proximo().include(dato);
-				if (flag) //Si lo encontramos
-					return true;
-			}
-		}
+		ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
+		hijos.comenzar();
+		while (!hijos.fin() && !flag) //Mientras no encontremos el dato y tenga hijos
+			flag = hijos.proximo().include(dato);
 		return flag;
 	}
 
+	
 	public void ImprimirPorNiveles() {
 		ArbolGeneral<T> arbol = null;
 		Cola<ArbolGeneral<T>> cola = new Cola<ArbolGeneral<T>>();
@@ -173,25 +186,25 @@ public class ArbolGeneral<T> {
 	}
 
 	public void RecorridoPorNiveles() {
-        ArbolGeneral<T> arbol = null; //Creo un arbol aux
-        Cola<ArbolGeneral<T>> cola = new Cola<ArbolGeneral<T>>(); //Creo una cola de arboles generales
-        cola.encolar(this); //Encolo la raiz
-        cola.encolar(null); //Indico que el nivel de la raiz finalizo
-        while (!cola.esVacia()) { //Recorro mientras la cola no esta vacia
-            arbol = cola.desencolar(); //Desencolo un nodo del actual nivel
-            if (arbol != null) {
-                //Proceso el nodo actual
-                if (arbol.tieneHijos()) { //Encolo sus hijos
-                    ListaGenerica<ArbolGeneral<T>> l = arbol.getHijos();
-                    l.comenzar();
-                    while (!l.fin()) {
-                        cola.encolar(l.proximo());
-                    }
-                }
-            } else if (!cola.esVacia()) { //Si la cola no esta vacia
-                //Realizo algun tipo de comparacion para establecer max o min, o terminar el recorrido
-                cola.encolar(null); //Indico que finalizo un nivel
-            }
-        }
-    }
+		ArbolGeneral<T> arbol = null; //Creo un arbol aux
+		Cola<ArbolGeneral<T>> cola = new Cola<ArbolGeneral<T>>(); //Creo una cola de arboles generales
+		cola.encolar(this); //Encolo la raiz
+		cola.encolar(null); //Indico que el nivel de la raiz finalizo
+		while (!cola.esVacia()) { //Recorro mientras la cola no esta vacia
+			arbol = cola.desencolar(); //Desencolo un nodo del actual nivel
+			if (arbol != null) {
+				//Proceso el nodo actual
+				if (arbol.tieneHijos()) { //Encolo sus hijos
+					ListaGenerica<ArbolGeneral<T>> l = arbol.getHijos();
+					l.comenzar();
+					while (!l.fin()) {
+						cola.encolar(l.proximo());
+					}
+				}
+			} else if (!cola.esVacia()) { //Si la cola no esta vacia
+				//Realizo algun tipo de comparacion para establecer max o min, o terminar el recorrido
+				cola.encolar(null); //Indico que finalizo un nivel
+			}
+		}
+	}
 }

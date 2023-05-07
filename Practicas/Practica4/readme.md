@@ -1,6 +1,4 @@
-# ***Practica 4***: 
-## *Arboles binarios*
-___
+# ***Practica 4***: *Arboles binarios*
 
 ## ***Objetivos de la practica:***
 Que el alumno comprenda el uso de los arboles binarios con objetos utilizando sus conocimientos previos sobre arboles binarios.

@@ -150,37 +150,29 @@ public class ArbolBinario<T> {
 
 	// imprime el arbol en preorden  
 	public void printPreorden() {
-		if (!this.esVacio()) {
-		    System.out.print(this.getDato() + " ");
+		System.out.print(this.getDato() + " ");
 		if (this.tieneHijoIzquierdo()) 
 			this.hijoIzquierdo.printPreorden();
 		if (this.tieneHijoDerecho()) 
 			this.hijoDerecho.printPreorden();
-		}
 	}
 
 	// imprime el arbol en postorden
 	public void printInorden() {
-		if (!this.esVacio()) {
-			if (this.tieneHijoIzquierdo()) 
-				this.hijoIzquierdo.printInorden();
-			System.out.print(this.getDato() + " ");
-			if (this.tieneHijoDerecho()) 
-				this.hijoDerecho.printInorden();
-		}
+		if (this.tieneHijoIzquierdo()) 
+			this.hijoIzquierdo.printInorden();
+		System.out.print(this.getDato() + " ");
+		if (this.tieneHijoDerecho()) 
+			this.hijoDerecho.printInorden();
 	}
 	
 	// imprime el arbol en postorden
 	public void printPostorden() {
-		if (!this.esVacio()) {
-			if (this.tieneHijoIzquierdo()) {
-				this.hijoIzquierdo.printPostorden();
-			}
-			if (this.tieneHijoDerecho()) {
-				this.hijoDerecho.printPostorden();
-			}
-			System.out.print(this.getDato() + " ");
-		}
+		if (this.tieneHijoIzquierdo()) 
+			this.hijoIzquierdo.printPostorden();
+	    if (this.tieneHijoDerecho()) 
+			this.hijoDerecho.printPostorden();
+		System.out.print(this.getDato() + " ");
 	}
 
 

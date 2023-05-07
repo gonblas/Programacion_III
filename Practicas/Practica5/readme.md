@@ -1,6 +1,4 @@
-# ***Practica 5***: 
-## *Arboles generales*
-___
+# ***Practica 5***: *Arboles generales*
 
 ## ***Objetivos de la practica:***
 Que el alumno comprenda el uso de los arboles generales con objetos utilizando sus conocimientos previos sobre arboles binarios en Java.
@@ -27,13 +25,13 @@ ___
 
 |                      Empresa                    |
 |:-----------------------------------------------:|
-|          -empleados: Collecion<Empleado>        |
+|         -empleados: Collection<Empleado>        |
 |+empleadosPorCategorias(): ListaGenerica<Integer>|
 |         +categoriaConMasEmpleados(): int        |
 |         +cantidadTotalDeEmpleados(): int        |
 |             +reemplazarPresidente()             |
 
-|           Empleado        |
+|          Empleado         |
 |:-------------------------:|
 |      -nombre: String      |
 |      -antiguedad: int     |
