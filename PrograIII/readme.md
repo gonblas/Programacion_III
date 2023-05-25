@@ -66,7 +66,7 @@ vamos a agregar. Si pudo eliminarlo devuelve true, false en caso contrario.
 ___
 ### ***BinaryTree***
 #### **ArbolBinario:** Esta clase representa un arbol binario que acepta tipos genericos.
-- **ArbolBinario(T dato):*Constructor que inicializa a la raiz con un valor.
+- **ArbolBinario(T dato):**Constructor que inicializa a la raiz con un valor.
 - **getDato():** Devuelve el dato que almacena el nodo del arbol.
 - **setDato(T dato):** Para cambiar el dato de un nodo del arbol.
 - **getHijoIzquierdo():** Devuelve el hijo izquierdo (Devuelve un arbol).
@@ -111,4 +111,50 @@ ___
 - **ancho():** Devuelve el ancho maximo de un arbol.
 - **include(T dato):** Devuelve true si el dato recibido se encuentra en el arbol, false en caso contrario.
 - **ImprimirPorNiveles():** Imprime el arbol por niveles.
+___
+
+### ***Graph***
+#### **Arista:** Interfaz de la arista de un grafo.
+- **verticeDestino():** Retorna el vertice destino.
+- **peso():** Retorna el peso de una arista.
+#### **AristaImpl:** Clase que representa la arista de un grafo. Al implementar la interfaz **Arista** implementa todos sus metodos.
+- **AristaImpl(Vertice<T> dest, int p):** Constructor que inicializa las variables de instancia de una arista.
+#### **Grafo:** Interfaz que representa un grafo.
+- **agregarVertice(Vertice<T> v):** Agrega un vertice al grafo.
+- **eliminarVertice(Vertice<T> v):** Elimina un vertice del grafo.
+- **conectar(Vertice<T> origen, Vertice<T> destino):** Dados dos vertices del grafo los conecta mediante una arista sin peso y con una direccion.
+- **conectar(Vertice<T> origen, Vertice<T> destino, int peso):** Dados dos vertices del grafo los conecta mediante una arista con peso y direccion.
+- **desConectar(Vertice<T> origen, Vertice<T> destino):** Dados dos vertices del grafo los desconecta.
+- **esAdyacente(Vertice<T> origen, Vertice<T> destino):** Retorna si un vertice es adyacente de otro.
+- **esVacio():** Retorna true si el grafo esta vacio, false en caso contrario.
+- **listaDeVertices():** Retorna una lista con todos los vertices del grafo.
+- **peso(Vertice<T> origen, Vertice<T> destino):** Retorna el peso de una arista dados los vertices origen y destino de la arista.
+- **listaDeAdyacentes(Vertice<T> v):** Retorna una lista con todos los vertices adyacentes al vertice pasado como parametro.
+- **vertice(int posicion):** Retorna la posicion del vertice.
+#### **GrafoImplListAdy:** Clase que representa un objeto de tipo grafo implementado con listas de adyacencia. Al implementar la interfaz **Grafo** implementa todos sus metodos.
+#### **GrafoImplMatrizAdy:** Clase que representa un objeto de tipo grafo implementado con una matriz de adyacencia. Al implementar la interfaz **Grafo** implementa todos sus metodos.
+#### **Vertice:** Interfaz que representa un vertice de un grafo.
+- **dato():** Retorna el dato que almacena el vertice.
+- **setDato(T unDato):** Dado un dato recibido como parametro establece un nuevo dato al vertice.
+- **posicion():** Retorna la posicion del vertice.
+#### **VerticeImplListAdy:** Clase que representa un vertice de un grafo implementado mediante listas de adyacencia. Al implementar la interfaz **Vertice** implementa todos sus metodos.
+- **VerticeImplListAdy(T d):** Constructor. Asigna un valor para el vertice y asigna memoria para la lista de adyacencia.
+- **conectar(Vertice<T> v):** Dado un vertice recibido como parametro lo conecta sin tener en cuenta el peso (peso 1).
+- **conectar(Vertice<T> v, int peso):** Dado un vertice recibido como parametro lo conecta teniendo en cuenta el peso.
+- **desconectar(Vertice<T> v):** Dado un vertice recibido como parametro lo desconecta de aquel que recibe el mensaje.
+- **obtenerAdyacentes():** Retorna una lista con los vertices adyacentes.
+- **esAdyacente(Vertice<T> v):** Retorna true si el vertice recibido por parametro es adyacente a aquel que recibe el mensaje, false en caso contrario.
+- **peso(Vertice<T> v):** Retorna el peso de la arista que conecta al vertice que recibe el mensaje con el vertice recibido por parametro.
+- **obtenerArista(Vertice<T> v):** Retorna una arista que conecta al vertice que recibe el mensaje con el vertice recibido por parametro.
+- **setPosicion(int pos):** Dada una posicion recibida por parametros establece el nuevo valor de la posicion del vertice.
+#### **VerticeImplMatrizAdy:** Clase que representa un vertice de un grafo implementado mediante una matriz de adyacencia. Al implementar la interfaz **Vertice** implementa todos sus metodos.
+- **VerticeImplMatrizAdy(T d):** Constructor. Asigna un valor para el vertice.
+- **conectar(Vertice<T> v):** Dado un vertice recibido como parametro lo conecta sin tener en cuenta el peso (peso 1).
+- **conectar(Vertice<T> v, int peso):** Dado un vertice recibido como parametro lo conecta teniendo en cuenta el peso.
+- **desconectar(Vertice<T> v):** Dado un vertice recibido como parametro lo desconecta de aquel que recibe el mensaje.
+- **obtenerAdyacentes():** Retorna una lista con los vertices adyacentes.
+- **esAdyacente(Vertice<T> v):** Retorna true si el vertice recibido por parametro es adyacente a aquel que recibe el mensaje, false en caso contrario.
+- **peso(Vertice<T> v):** Retorna el peso de la arista que conecta al vertice que recibe el mensaje con el vertice recibido por parametro.
+- **obtenerArista(Vertice<T> v):** Retorna una arista que conecta al vertice que recibe el mensaje con el vertice recibido por parametro.
+- **setPosicion(int pos):** Dada una posicion recibida por parametros establece el nuevo valor de la posicion del vertice.
 ___

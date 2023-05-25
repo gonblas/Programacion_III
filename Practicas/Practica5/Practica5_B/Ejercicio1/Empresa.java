@@ -54,7 +54,8 @@ public class Empresa {
 		Cola<ArbolGeneral<Empleado>> cola = new Cola<ArbolGeneral<Empleado>>();
 		cola.encolar(empleados);
 		cola.encolar(null);
-        int lvl = 1, max = 0, maxCat = -1, cant_empleados = 0;
+        int max = 0, cant_empleados = 0;
+
         while (!cola.esVacia()) {
             a = cola.desencolar();
             if (a != null) {
@@ -71,9 +72,7 @@ public class Empresa {
                     cola.encolar(null);
                     if (cant_empleados > max) {
                         max = cant_empleados;
-                        maxCat = lvl;
                     }
-                    lvl++;
                     cant_empleados = 0;
                 }
             }
@@ -106,7 +105,7 @@ public class Empresa {
         ArbolGeneral<Empleado> arbol = this.empleados; //Creo un arbol para recorrer
         while (arbol != null) { //Recorro mientras el arbol no sea null, solo sirve para cuando la raiz es null
             ListaGenerica<ArbolGeneral<Empleado>> hijos = arbol.getHijos();
-            l.comenzar();
+            hijos.comenzar();
             ArbolGeneral<Empleado> e = hijos.proximo();
             while (!hijos.fin()) { //Recorro la lista de hijos
                 ArbolGeneral<Empleado> e2 = hijos.proximo();

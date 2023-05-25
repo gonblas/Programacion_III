@@ -14,16 +14,14 @@ public class Multiplos2{
         for (int i = 0; i < n; i++)
             System.out.print(mult[i] + " ");
         System.out.println();
-
+        in.close();
     }
 
 
     public static int[] getMultiplos(int n){
-        
         int[] mult = new int[n];
         for(int i = 0, j = 5; i < n; i++, j+=5)
             mult[i] = j;
-    
         return mult;
     }
 }

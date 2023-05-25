@@ -1,4 +1,5 @@
-package Practicas.Practica2.Practica2_A.Ejercicio_1.Ejercicio1_5;
+package Ejercicio_1.Ejercicio1_5;
+
 
 public class IteradorAB{
     public static void main(String[] args) {

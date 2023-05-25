@@ -3,7 +3,6 @@ package Practicas.Practica5.Practica5_B.Ejercicio3;
 import PrograIII.GeneralTree.ArbolGeneral;
 import PrograIII.ListGeneric.ListaGenerica;
 import PrograIII.ListGeneric.ListaGenericaEnlazada;
-import PrograIII.ListGeneric.Cola;
 
 public class TRIE {
     private ArbolGeneral<Character> a;

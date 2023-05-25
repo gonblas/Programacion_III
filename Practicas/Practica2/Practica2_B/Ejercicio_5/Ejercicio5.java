@@ -15,5 +15,6 @@ import java.util.Scanner;
             System.out.println(i.toString());
             System.out.println();
         }
+        in.close();
     }
 }

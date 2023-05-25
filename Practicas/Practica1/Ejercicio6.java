@@ -10,7 +10,7 @@ import java.util.Scanner;
             System.out.println("Ingrese una temperatura en grados Fahrenheit: ");
             fahrenheit = in.nextDouble();
             System.out.println("Temperatura en grados Celcius: " + calcularCelcius(fahrenheit));
-
+            in.close();
         }
     
     public static double calcularCelcius(double F) {

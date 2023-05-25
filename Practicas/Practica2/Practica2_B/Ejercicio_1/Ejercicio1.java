@@ -1,4 +1,5 @@
 package Practica2_B.Ejercicio_1;
+
 import java.util.Scanner;
 
     public class Ejercicio1{
@@ -13,6 +14,6 @@ import java.util.Scanner;
         System.out.println(obj2.toString());
 
         System.out.println(obj1.equals(obj2));
-        
+        in.close();
     }
 }

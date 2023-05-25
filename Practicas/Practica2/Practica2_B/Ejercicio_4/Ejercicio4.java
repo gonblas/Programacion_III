@@ -8,7 +8,7 @@ import java.util.Scanner;
 
             int[] a = { 1, 10, 19, 87, 11 };
             System.out.println(q2(a));
-
+            in.close();
 
         }
     

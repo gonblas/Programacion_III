@@ -1,4 +1,5 @@
-package Practicas.Practica2.Practica2_A.Ejercicio_1.Ejercicio1_6;
+package Ejercicio_1.Ejercicio1_6;
+
 
 public class IteradorAB {
     
