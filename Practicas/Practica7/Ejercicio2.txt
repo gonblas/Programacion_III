@@ -1,0 +1,24 @@
+Ejercicio 2
+
+a. En un grafo no dirigido de n vértices, ¿Cuál es el número de aristas que puede tener?
+Fundamentar.
+i. ¿Cuál es el mínimo número de aristas que puede tener si se exige que el grafo sea
+conexo?
+ii. ¿Cuál es el máximo número de aristas que puede tener si se exige que el grafo sea
+acíclico?
+iii. ¿Cuál es el número de aristas que puede tener si se exige que el grafo sea conexo y
+acíclico?
+iv. ¿Cuál es el mínimo número de aristas que puede tener si se exige que el grafo sea
+completo? (Un grafo es completo si hay una arista entre cada par de vértices.)
+
+RTA: Siendo n la cantidad de vertices y m la cantidad de aristas...
+i. El numero minimo de aristas que debe tener un grafo no dirigido conexo es n-1 (la cantidad de vertices) ya que por lo menos un vertice debe estar conectado con otro para que exista un camino entre cada uno de los vertices.
+ii. El numero maximo de aristas que puede tener un grafo dirigido si se exige que el mismo sea aciclico es (n * (n-1))/2 ya que si tenemos n vertices, los mismos se pueden conectar con todos los otros menos con sigo mismo y dividimos por 2 ya que sino contariamos las aristas doble.
+iii. El numero de aristas que puede tener un grafo no dirigido conexo y aciclico es [n-1, (n*(n-1))/2]. El valor minimo se debe a que cada n-1 es la cantidad de vertices a los cuales se puede conectar como minimo un vertice para que sea conexo, el valor maximo fue explicado en ii.
+iv. El numero minimo de aristas que puede tener un grafo dirigido completo es (n*(n-1))/2. Si hay una arista entre cada par de vertices entonces cada vertice debe estar conectado con cada uno los demas vertices (misma idea que en ii.).
+
+
+b. En un grafo dirigido y que no tiene aristas que vayan de un nodo a sí mismo, ¿Cuál es el
+mayor número de aristas que puede tener? Fundamentar
+
+RTA: En un grafo dirigido que no tiene aristas hacia si mismo el maximo numero de aristas es n*(n-1) ya que cada vertice como maximo puede conectarse con todos los demas vertices menos con si mismo.

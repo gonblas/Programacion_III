@@ -115,28 +115,29 @@ ___
 
 ### ***Graph***
 #### **Arista:** Interfaz de la arista de un grafo.
-- **verticeDestino():** Retorna el vertice destino.
-- **peso():** Retorna el peso de una arista.
+- **verticeDestino():** Retorna el vértice destino de la arista.
+- **peso():** Retorna el peso de la arista.
 #### **AristaImpl:** Clase que representa la arista de un grafo. Al implementar la interfaz **Arista** implementa todos sus metodos.
 - **AristaImpl(Vertice<T> dest, int p):** Constructor que inicializa las variables de instancia de una arista.
 #### **Grafo:** Interfaz que representa un grafo.
-- **agregarVertice(Vertice<T> v):** Agrega un vertice al grafo.
-- **eliminarVertice(Vertice<T> v):** Elimina un vertice del grafo.
-- **conectar(Vertice<T> origen, Vertice<T> destino):** Dados dos vertices del grafo los conecta mediante una arista sin peso y con una direccion.
-- **conectar(Vertice<T> origen, Vertice<T> destino, int peso):** Dados dos vertices del grafo los conecta mediante una arista con peso y direccion.
-- **desConectar(Vertice<T> origen, Vertice<T> destino):** Dados dos vertices del grafo los desconecta.
-- **esAdyacente(Vertice<T> origen, Vertice<T> destino):** Retorna si un vertice es adyacente de otro.
-- **esVacio():** Retorna true si el grafo esta vacio, false en caso contrario.
-- **listaDeVertices():** Retorna una lista con todos los vertices del grafo.
-- **peso(Vertice<T> origen, Vertice<T> destino):** Retorna el peso de una arista dados los vertices origen y destino de la arista.
-- **listaDeAdyacentes(Vertice<T> v):** Retorna una lista con todos los vertices adyacentes al vertice pasado como parametro.
-- **vertice(int posicion):** Retorna la posicion del vertice.
+- **agregarVertice(Vertice<T> v):** Agrega un vértice al Grafo. Verifica que el vértice
+no exista en el Grafo.
+- **eliminarVertice(Vertice<T> v):** Elimina el vértice del Grafo. En caso que el vértice tenga conexiones con otros vértices, se eliminan todas sus conexiones.
+- **conectar(Vertice<T> origen, Vertice<T> destino):** Conecta el vértice origen con el vértice destino sin peso. Verifica que ambos vértices existan, caso contrario no realiza ninguna conexión
+- **conectar(Vertice<T> origen, Vertice<T> destino, int peso):** Conecta el vértice origen con el vértice destino con peso. Verifica que ambos vértices existan, caso contrario no realiza ninguna conexión.
+- **desConectar(Vertice<T> origen, Vertice<T> destino):** Desconecta el vértice origen con el destino. Verifica que ambos vértices y la conexión origen->destino existan, caso contrario no realiza ninguna desconexión. En caso de existir la conexión destino -> origen, ésta permanece sin cambios.
+- **esAdyacente(Vertice<T> origen, Vertice<T> destino):** Retorna true si origen es adyacente a destino. False en caso contrario.
+- **esVacio():** Retorna true en caso que el grafo no contenga ningún vértice. False en caso contrario.
+- **listaDeVertices():** /Retorna la lista con todos los vértices del grafo.
+- **peso(Vertice<T> origen, Vertice<T> destino):** /Retorna el peso de la conexión origen -->destino . Si no existiera la conexión retorna 0.
+- **listaDeAdyacentes(Vertice<T> v):**  Retorna la lista de adyacentes de un vértice.
+- **vertice(int posicion):** Retorna el vértice dada su posición.
 #### **GrafoImplListAdy:** Clase que representa un objeto de tipo grafo implementado con listas de adyacencia. Al implementar la interfaz **Grafo** implementa todos sus metodos.
 #### **GrafoImplMatrizAdy:** Clase que representa un objeto de tipo grafo implementado con una matriz de adyacencia. Al implementar la interfaz **Grafo** implementa todos sus metodos.
 #### **Vertice:** Interfaz que representa un vertice de un grafo.
-- **dato():** Retorna el dato que almacena el vertice.
-- **setDato(T unDato):** Dado un dato recibido como parametro establece un nuevo dato al vertice.
-- **posicion():** Retorna la posicion del vertice.
+- **dato():** Retorna el dato del vértice.
+- **setDato(T unDato):** Setea el dato del vértice.
+- **posicion():** Retorna la posición del vértice.
 #### **VerticeImplListAdy:** Clase que representa un vertice de un grafo implementado mediante listas de adyacencia. Al implementar la interfaz **Vertice** implementa todos sus metodos.
 - **VerticeImplListAdy(T d):** Constructor. Asigna un valor para el vertice y asigna memoria para la lista de adyacencia.
 - **conectar(Vertice<T> v):** Dado un vertice recibido como parametro lo conecta sin tener en cuenta el peso (peso 1).
@@ -157,4 +158,8 @@ ___
 - **peso(Vertice<T> v):** Retorna el peso de la arista que conecta al vertice que recibe el mensaje con el vertice recibido por parametro.
 - **obtenerArista(Vertice<T> v):** Retorna una arista que conecta al vertice que recibe el mensaje con el vertice recibido por parametro.
 - **setPosicion(int pos):** Dada una posicion recibida por parametros establece el nuevo valor de la posicion del vertice.
+
+#### **Recorridos:** Clase con los recorridos basicos de un grafo.
+- **dfs(Grafo<T> grafo):** Retorna una lista de vértices con el recorrido en profundidad del grafo recibido como parámetro.
+- **bfs(Grafo<T> grafo):** Retorna una lista de vértices con el recorrido en amplitud del grafo recibido como parámetro.
 ___

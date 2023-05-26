@@ -1,0 +1,20 @@
+Ejercicio 1
+a. ¿Cuál es la diferencia entre un grafo y un árbol?
+
+RTA: La diferencia entre un grafo y un arbol principalmente es que el grafo es una generalizacion del arbol, ó, el arbol es una extension del concepto de grafo. El arbol es un grafo sin ciclos y conexo en el que un vertice/nodo se ha designado como raíz. Por lo tanto, un arbol es un grafo, pero un grafo no es arbol.
+
+
+b. Indicar para cada uno de los siguientes casos si la relación se representa a través de un
+grafo no dirigido o de un grafo dirigido (digrafo).
+i. Vértices: países. Aristas: es limítrofe.
+ii. Vértices: países. Aristas: principales mercados de exportación.
+iii. Vértices: dispositivos en una red de computadoras. Aristas: conectividad.
+iv. Vértices: variables de un programa. Aristas: relación “usa”. (Decimos que la variable
+x usa la variable y, si y aparece del lado derecho de una expresión y x aparece del
+lado izquierdo, por ejemplo x = y).
+
+RTA:
+i. La relacion se representa mediante un grafo no dirigido ya que dos paises son limitrofes uno con el otro, por definicion.
+ii. La relacion se representa mediante un grafo dirigido ya que para un pais dado tiene un buen mercado de exportacion y ese pais no necesariamente lo tiene al anterior como un buen mercado de exportacion, por lo que la relacion no es de ida y vuelta.
+iii. La relacion se representa mediante un grafo no dirigido ya que la dos computadoras en una red estan conectadas mutuamente. La informacion puede fluir en ambos sentidos.
+iv. La relacion se representa mediante un grafo dirigido ya que una variable de un programa puede utilizar a otra variable, y ese otra variable puede no utilizar a la primera.
