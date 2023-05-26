@@ -1,0 +1,20 @@
+Ejercicio 3
+
+Teniendo en cuenta las dos representaciones de grafos: Matriz de Adyacencias y Lista de
+Adyacencias.
+a. Bajo qué condiciones usaría una Matriz de Adyacencias en lugar de una Lista de
+Adyacencias para representar un grafo. Y una Lista de Adyacencias en lugar de una Matriz
+de Adyacencias. Fundamentar.
+
+RTA: Utilizaria una matriz de adyacencia si el grafo a representar es un grafo denso (|E|≈|V|×|V|) o cuando priorizamos el acceso a un vertice o arista (ya que el acceso es constante). Utilizaria una lista de adyacencia si el grafo a representar no es un grafo denso ya que la matriz en este caso almacenaria muchos valores 0 en la matriz, algo que no queremos almacenar idealmente.
+
+b. ¿En función de qué parámetros resulta apropiado realizar la estimación del orden de
+ejecución para algoritmos sobre grafos densos? ¿Y para algoritmos sobre grafos dispersos?
+Fundamentar.
+
+RTA: Los parametros los cuales resultan apropiados para realizar la estimacion del orden de ejecucion para un grafo denso (representados con matriz de adyacencia) son |V| (cantidad de vertices) para el costo espacial y O(1) para el costo temporal. Para algoritmos con grafos dispersos (representados con listas de adyacencias) los parametros son |V|y|E|(cantidad de vertices y aristas).
+
+c. Si representamos un grafo no dirigido usando una Matriz de Adyacencias, ¿cómo sería la
+matriz resultante? Fundamentar.
+
+RTA: La matriz resultante es una matriz simetrica respecto de la diagonal.

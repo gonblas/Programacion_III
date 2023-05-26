@@ -12,7 +12,6 @@ public class GrafoImplMatrizAdy<T> implements Grafo<T> {
 		this.maxVertices = maxVert;
 		this.matrizAdy = new int [maxVert][maxVert];
 		this.vertices = new ListaGenericaEnlazada<Vertice<T>>();
-		
 	}
 	public void agregarVertice(Vertice<T> v) {
 		VerticeImplMatrizAdy<T> v2 = ((VerticeImplMatrizAdy<T>) v);
@@ -40,19 +39,22 @@ public class GrafoImplMatrizAdy<T> implements Grafo<T> {
 	}
 	
 	public void desConectar(Vertice<T> origen, Vertice<T> destino) {
-		if (vertices.incluye(origen) && vertices.incluye(destino)){
-		    matrizAdy[origen.posicion()][destino.posicion()] = 0;
-		    }
+		if (vertices.incluye(origen) && vertices.incluye(destino)) {
+			matrizAdy[origen.posicion()][destino.posicion()] = 0;
 		}
+	}
+	
 	public boolean esAdyacente(Vertice<T> origen, Vertice<T> destino) {
-		if (vertices.incluye(origen) && vertices.incluye(destino)){
-			return (!(matrizAdy[origen.posicion()][destino.posicion()]==0));
+		if (vertices.incluye(origen) && vertices.incluye(destino)) {
+			return (!(matrizAdy[origen.posicion()][destino.posicion()] == 0));
 		}
 		return false;
 	}
+	
 	public boolean esVacio() {
 		return vertices.esVacia();
 	}
+	
 	public ListaGenerica<Vertice<T>> listaDeVertices() {
 		return vertices;
 	}

@@ -30,8 +30,6 @@ public class GrafoImplListAdy<T> implements Grafo<T> {
 	@Override
 	public void conectar(Vertice<T> origen, Vertice<T> destino) {
 		((VerticeImplListAdy<T>) origen).conectar(destino);
-
-		
 	}
 
 	@Override
@@ -43,28 +41,24 @@ public class GrafoImplListAdy<T> implements Grafo<T> {
 	@Override
 	public void desConectar(Vertice<T> origen, Vertice<T> destino) {
 		((VerticeImplListAdy<T>) origen).desconectar(destino);
-		
 	}
 
 	@Override
 	public boolean esAdyacente(Vertice<T> origen, Vertice<T> destino) {
 		if (vertices.incluye(origen) && vertices.incluye(destino)){		
-		return ((VerticeImplListAdy<T>) origen).esAdyacente(destino);
-	
+		    return ((VerticeImplListAdy<T>) origen).esAdyacente(destino);
 		}
-	return false;
+	    return false;
 	}
-		
+
 
 	@Override
 	public boolean esVacio() {
-		
 		return vertices.esVacia();
 	}
 
 	@Override
 	public ListaGenerica<Vertice<T>> listaDeVertices() {
-		
 		return vertices;
 	}
 
