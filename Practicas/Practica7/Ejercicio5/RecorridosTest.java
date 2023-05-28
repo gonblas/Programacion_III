@@ -1,4 +1,4 @@
-package Practicas.Practica7;
+package Practicas.Practica7.Ejercicio5;
 
 import PrograIII.Graph.VerticeImplListAdy;
 import PrograIII.Graph.Vertice;

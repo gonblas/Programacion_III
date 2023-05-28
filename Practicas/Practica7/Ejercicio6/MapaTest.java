@@ -1,11 +1,13 @@
-package Practicas.Practica7;
+package Practicas.Practica7.Ejercicio6;
 
 import PrograIII.Graph.VerticeImplListAdy;
 import PrograIII.Graph.Vertice;
 import PrograIII.Graph.Grafo;
 import PrograIII.Graph.GrafoImplListAdy;
+import PrograIII.ListGeneric.ListaGenerica;
 
-public class AlgoritmosTest {
+
+public class MapaTest {
     public static void main(String[] args) {
         Vertice<String> v1 = new VerticeImplListAdy<String>("Buenos Aires");
         Vertice<String> v2 = new VerticeImplListAdy<String>("Santiago");
@@ -26,18 +28,30 @@ public class AlgoritmosTest {
         ciudades.conectar(v1, v2, 3);
         ciudades.conectar(v1, v3, 2);
         ciudades.conectar(v1, v4, 4);
-        ciudades.conectar(v1, v5, 60);
+        ciudades.conectar(v1, v5, 8);
         ciudades.conectar(v2, v5, 500);
-        ciudades.conectar(v3, v5, 4);
+        ciudades.conectar(v3, v5, 88);
         ciudades.conectar(v4, v5, 9);
         ciudades.conectar(v2, v6, 4);
         ciudades.conectar(v7, v5, 11);
         ciudades.conectar(v7, v6, 10);
 
-        Algoritmos<String> A = new Algoritmos<>();
+        Mapa M = new Mapa(ciudades);
+        ListaGenerica<String> l = M.devolverCamino("Buenos Aires", "Asunsion");
+        System.out.println(l.toString());
 
-        System.out.println("El grado del digrafo es " + A.getGrado(ciudades)); //RTA: 5
+        l.eliminar("Buenos Aires");
+        l.eliminar("Asunsion");
+        ListaGenerica<String> l2 = M.devolverCaminoExceptuando("Buenos Aires", "Asunsion", l);
+        System.out.println(l2.toString());
 
-        System.out.println("¿El grafo tiene al menos un ciclo? " + A.tieneCiclo(ciudades)); //RTA: false
+        ListaGenerica<String> l3 = M.caminoMasCorto("Buenos Aires", "Asunsion");
+        System.out.println(l3.toString());
+
+        ListaGenerica<String> l4 = M.caminoSinCargarCombustible("Buenos Aires", "Asunsion", 10);
+        System.out.println(l4.toString());
+
+        ListaGenerica<String> l5 = M.caminoConMenorCargaDeCombustible("Buenos Aires", "Asunsion", 10);
+        System.out.println(l5.toString());
     }
 }
