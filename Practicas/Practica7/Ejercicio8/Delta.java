@@ -36,7 +36,9 @@ public class Delta {
         }
         return cant;
     } 
+    
 
+    //Corregir O(∞)//Corregir O(∞) y una clase extra armada
     public RutaMinima<String> caminoMasCorto(Grafo<String> grafo, String islaO, String islaD){
         Auxiliar<String> act = new Auxiliar<String>();
         Auxiliar<String> min = new Auxiliar<String>();

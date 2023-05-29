@@ -6,7 +6,7 @@ import PrograIII.ListGeneric.ListaGenericaEnlazada;
 import PrograIII.Graph.Vertice;
 import PrograIII.Graph.Arista;
 
-//Corregir todo O(∞)
+
 
 public class Mapa {
     private Grafo<String> grafo;
@@ -24,7 +24,7 @@ public class Mapa {
                 break;
             }
         }
-        if (i < marca.length) //Si la ciudad se encuentra en el grafo
+        if (i < marca.length) //Si la ciudad1 se encuentra en el grafo
             devolverCamino(i, grafo, marca, l, ciudad2);
         return l;
     }
@@ -134,8 +134,9 @@ public class Mapa {
         }
     }
     
-    public ListaGenerica<String> caminoSinCargarCombustible(String ciudad1, String ciudad2, int
-    tanqueAuto) {
+
+    //Posiblemente este mal
+    public ListaGenerica<String> caminoSinCargarCombustible(String ciudad1, String ciudad2, int tanqueAuto) {
         ListaGenerica<String> l = new ListaGenericaEnlazada<String>();
         ListaGenerica<String> result = new ListaGenericaEnlazada<String>();
         boolean[] marca = new boolean[grafo.listaDeVertices().tamanio()];
@@ -175,6 +176,8 @@ public class Mapa {
         }
     }
     
+
+    //Esta mal (anda bien pero O(∞))
     public ListaGenerica<String> caminoConMenorCargaDeCombustible(String ciudad1, String ciudad2, int
     tanqueAuto) {
         Resultado<String> aux = new Resultado<String>(new ListaGenericaEnlazada<>(), 0);

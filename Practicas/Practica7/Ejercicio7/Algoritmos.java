@@ -7,7 +7,7 @@ import PrograIII.Graph.Vertice;
 import java.util.Arrays;
 
 public class Algoritmos<T> {
-    
+
     public boolean subgrafoCuadrado(Grafo<T> grafo){
         boolean[] marca = new boolean[grafo.listaDeVertices().tamanio()];
         for (int i = 0; i < marca.length; i++) {
@@ -60,7 +60,7 @@ public class Algoritmos<T> {
         
         return Arrays.stream(grados).max().getAsInt();
     }
-    
+
 
     public boolean tieneCiclo(Grafo<T> grafo) {
         boolean[] marca = new boolean[grafo.listaDeVertices().tamanio()];
