@@ -1,4 +1,4 @@
-package Practicas.Practica7.Ejercicio8;
+package Practicas.Practica7.Practica7_A.Ejercicio8;
 
 import PrograIII.ListGeneric.ListaGenerica;
 import PrograIII.ListGeneric.ListaGenericaEnlazada;

@@ -1,4 +1,4 @@
-package Practicas.Practica7.Ejercicio6;
+package Practicas.Practica7.Practica7_A.Ejercicio6;
 
 import PrograIII.Graph.Grafo;
 import PrograIII.ListGeneric.ListaGenerica;
