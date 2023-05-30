@@ -13,7 +13,7 @@ public class MapaTest {
         Vertice<String> v2 = new VerticeImplListAdy<String>("Santiago");
         Vertice<String> v3 = new VerticeImplListAdy<String>("Lima");
         Vertice<String> v4 = new VerticeImplListAdy<String>("Montevideo");
-        Vertice<String> v5 = new VerticeImplListAdy<String>("Asunsion");
+        Vertice<String> v5 = new VerticeImplListAdy<String>("Asuncion");
         Vertice<String> v6 = new VerticeImplListAdy<String>("La Habana");
         Vertice<String> v7 = new VerticeImplListAdy<String>("Caracas");
 
@@ -37,21 +37,21 @@ public class MapaTest {
         ciudades.conectar(v7, v6, 10);
 
         Mapa M = new Mapa(ciudades);
-        ListaGenerica<String> l = M.devolverCamino("Buenos Aires", "Asunsion");
+        ListaGenerica<String> l = M.devolverCamino("Buenos Aires", "Asuncion");
         System.out.println(l.toString());
 
         l.eliminar("Buenos Aires");
-        l.eliminar("Asunsion");
-        ListaGenerica<String> l2 = M.devolverCaminoExceptuando("Buenos Aires", "Asunsion", l);
+        l.eliminar("Asuncion");
+        ListaGenerica<String> l2 = M.devolverCaminoExceptuando("Buenos Aires", "Asuncion", l);
         System.out.println(l2.toString());
 
-        ListaGenerica<String> l3 = M.caminoMasCorto("Buenos Aires", "Asunsion");
+        ListaGenerica<String> l3 = M.caminoMasCorto("Buenos Aires", "Asuncion");
         System.out.println(l3.toString());
 
-        ListaGenerica<String> l4 = M.caminoSinCargarCombustible("Buenos Aires", "Asunsion", 10);
+        ListaGenerica<String> l4 = M.caminoSinCargarCombustible("Buenos Aires", "Asuncion", 10);
         System.out.println(l4.toString());
 
-        ListaGenerica<String> l5 = M.caminoConMenorCargaDeCombustible("Buenos Aires", "Asunsion", 10);
+        ListaGenerica<String> l5 = M.caminoConMenorCargaDeCombustible("Buenos Aires", "Asuncion", 10);
         System.out.println(l5.toString());
     }
 }

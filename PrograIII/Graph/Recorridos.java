@@ -6,7 +6,7 @@ import PrograIII.ListGeneric.Cola;
 
 
 public class Recorridos<T> {
-    //Orden O(|V|)
+    //Orden O(|V|+|E|)
     public ListaGenerica<Vertice<T>> dfs(Grafo<T> grafo) {
         ListaGenerica<Vertice<T>> l = new ListaGenericaEnlazada<Vertice<T>>();
         boolean[] marca = new boolean[grafo.listaDeVertices().tamanio()];
@@ -31,7 +31,7 @@ public class Recorridos<T> {
         }
     } 
     
-    //Orden O(|V|)
+    //Orden O(|V|+|E|)
     public ListaGenerica<Vertice<T>> bfs(Grafo<T> grafo) {
         ListaGenerica<Vertice<T>> l = new ListaGenericaEnlazada<Vertice<T>>();
         boolean[] marca = new boolean[grafo.listaDeVertices().tamanio()];

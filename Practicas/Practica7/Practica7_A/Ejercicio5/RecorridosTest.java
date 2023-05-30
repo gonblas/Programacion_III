@@ -13,7 +13,7 @@ public class RecorridosTest {
         Vertice<String> v2 = new VerticeImplListAdy<String>("Santiago");
         Vertice<String> v3 = new VerticeImplListAdy<String>("Lima");
         Vertice<String> v4 = new VerticeImplListAdy<String>("Montevideo");
-        Vertice<String> v5 = new VerticeImplListAdy<String>("Asunsion");
+        Vertice<String> v5 = new VerticeImplListAdy<String>("Asuncion");
         Vertice<String> v6 = new VerticeImplListAdy<String>("La Habana");
         Vertice<String> v7 = new VerticeImplListAdy<String>("Caracas");
 

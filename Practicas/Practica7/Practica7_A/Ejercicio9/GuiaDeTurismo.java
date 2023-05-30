@@ -8,7 +8,6 @@ import PrograIII.ListGeneric.ListaGenerica;
 import PrograIII.ListGeneric.ListaGenericaEnlazada;
 
 public class GuiaDeTurismo {
-    //DEBERIA COMPARAR PARA CADA LISTA QUE SE VA ARMANDO SI LA CANTIDAD DE PASAJEROS EN TODO EL VIAJE ES MAXIMA Y AHI SI ESTABLEZCO EL NUEVO VALOR
     public ListaGenerica<String> caminoConMenorNrodeViajes(Grafo<String> grafo, String origen, String destino) {
         ListaGenerica<String> result = new ListaGenericaEnlazada<String>();
         Vertice<String> vertOrigen = null, vertDestino = null;
@@ -32,7 +31,7 @@ public class GuiaDeTurismo {
         Arrays.fill(maximos, -1);
         maximos[posOrigen] = 0;
         while(true) {
-            int pos = verticeDesconocidoMenorDist(maximos, marca);
+            int pos = verticeDesconocidoMayorDist(maximos, marca);
             Vertice<String> U = grafo.listaDeVertices().elemento(pos);
             marca[pos] = true;
             if(marca[posDestino]) //Corto cuando encuentro el camino minimo hasta el destino
@@ -42,8 +41,8 @@ public class GuiaDeTurismo {
             while (!ady.fin()) {
                 Arista<String> A = ady.proximo();
                 Vertice<String> W = A.verticeDestino();
-                if ((!marca[W.posicion()]) && (maximos[W.posicion()] < maximos[U.posicion()] + A.peso())) {
-                    maximos[W.posicion()] = maximos[U.posicion()] + A.peso();
+                if ((!marca[W.posicion()]) && (maximos[W.posicion()] < A.peso())) { 
+                    maximos[W.posicion()] = A.peso();
                     anterior[W.posicion()] = U.posicion();
                 }
             }
@@ -58,7 +57,7 @@ public class GuiaDeTurismo {
         return result;
     }
     
-    public int verticeDesconocidoMenorDist(int[] maximos, boolean[] marca) {
+    public int verticeDesconocidoMayorDist(int[] maximos, boolean[] marca) {
         int maxDistancia = -1;
         int maxPos = -1;
         
