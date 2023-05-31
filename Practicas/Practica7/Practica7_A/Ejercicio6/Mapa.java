@@ -14,6 +14,7 @@ public class Mapa {
     Mapa(Grafo<String> grafo) {
         this.grafo = grafo;
     }
+    //----------------------------------------------------------------------------------------
     
     public ListaGenerica<String> devolverCamino(String ciudad1, String ciudad2) {
         ListaGenerica<String> l = new ListaGenericaEnlazada<String>();
@@ -49,6 +50,8 @@ public class Mapa {
         }
         return false;
     }
+
+    //----------------------------------------------------------------------------------------
     
     public ListaGenerica<String> devolverCaminoExceptuando(String ciudad1, String ciudad2, ListaGenerica<String> ciudades) {
         ListaGenerica<String> l = new ListaGenericaEnlazada<String>();
@@ -87,6 +90,8 @@ public class Mapa {
         }
         return false;
     }
+
+    //----------------------------------------------------------------------------------------
     
     public ListaGenerica<String> caminoMasCorto(String ciudad1, String ciudad2) {
         ListaGenerica<String> l = new ListaGenericaEnlazada<String>();
@@ -135,7 +140,9 @@ public class Mapa {
     }
     
 
-    //Posiblemente este mal
+    //----------------------------------------------------------------------------------------
+
+
     public ListaGenerica<String> caminoSinCargarCombustible(String ciudad1, String ciudad2, int tanqueAuto) {
         ListaGenerica<String> l = new ListaGenericaEnlazada<String>();
         ListaGenerica<String> result = new ListaGenericaEnlazada<String>();
@@ -177,7 +184,8 @@ public class Mapa {
     }
     
 
-    //Esta mal (anda bien pero O(∞))
+    //----------------------------------------------------------------------------------------
+    
     public ListaGenerica<String> caminoConMenorCargaDeCombustible(String ciudad1, String ciudad2, int
     tanqueAuto) {
         Resultado<String> aux = new Resultado<String>(new ListaGenericaEnlazada<>(), 0);

@@ -7,7 +7,9 @@ import PrograIII.Graph.Vertice;
 import PrograIII.ListGeneric.ListaGenerica;
 import PrograIII.ListGeneric.ListaGenericaEnlazada;
 
-public class Delta{
+public class Delta {
+
+    //----------------------------------------------------------------------------------------
 
     public int maxIslasDistintas(Grafo<String> grafo) {
         int aux, max = -1;
@@ -39,7 +41,9 @@ public class Delta{
         return cant;
     }
 
-    //Corregir O(∞)//Corregir O(∞) y una clase extra armada
+    //----------------------------------------------------------------------------------------
+
+    //Opcion con DFS
     // public RutaMinima<String> caminoMasCorto(Grafo<String> grafo, String islaO, String islaD){
     //     Auxiliar<String> act = new Auxiliar<String>();
     //     Auxiliar<String> min = new Auxiliar<String>();
@@ -87,6 +91,8 @@ public class Delta{
     //     }
     // }
 
+    //----------------------------------------------------------------------------------------
+
     public RutaMinima<String> caminoMasCorto(Grafo<String> grafo, String islaO, String islaD) {
         RutaMinima<String> RM = new RutaMinima<String>();
         Vertice<String> vertOrigen = null, vertDestino = null;
@@ -100,17 +106,17 @@ public class Delta{
                 vertDestino = V;
         }
 
-        if((vertOrigen != null) && (vertDestino != null)){
+        if ((vertOrigen != null) && (vertDestino != null)) {
             RM.setCamino(Dijkstra(grafo, vertOrigen, vertDestino));
             if (RM.getCamino().incluye(grafo.listaDeVertices().elemento(0).dato()))
                 RM.setBoletoUnico(false);
         }
         return RM;
     }
-    
+
     public ListaGenerica<String> Dijkstra(Grafo<String> grafo, Vertice<String> origen, Vertice<String> destino) {
         ListaGenerica<String> result = new ListaGenericaEnlazada<String>();
-        if((!grafo.listaDeVertices().incluye(origen)) || (!grafo.listaDeVertices().incluye(destino)))
+        if ((!grafo.listaDeVertices().incluye(origen)) || (!grafo.listaDeVertices().incluye(destino)))
             return result;
         int lenght = grafo.listaDeVertices().tamanio();
         int[] minimos = new int[lenght];
@@ -120,11 +126,11 @@ public class Delta{
 
         Arrays.fill(minimos, Integer.MAX_VALUE);
         minimos[posOrigen] = 0;
-        while(true) {
+        while (true) {
             int pos = verticeDesconocidoMenorDist(minimos, marca);
             Vertice<String> U = grafo.listaDeVertices().elemento(pos);
             marca[pos] = true;
-            if(marca[posDestino]) //Corto cuando encuentro el camino minimo hasta el destino
+            if (marca[posDestino]) //Corto cuando encuentro el camino minimo hasta el destino
                 break;
             ListaGenerica<Arista<String>> ady = grafo.listaDeAdyacentes(U);
             ady.comenzar();
@@ -138,26 +144,26 @@ public class Delta{
             }
         }
         int posAux = posDestino;
-        while(true){
+        while (true) {
             result.agregarInicio(grafo.listaDeVertices().elemento(posAux).dato());
-            if(posAux == posOrigen)
+            if (posAux == posOrigen)
                 break;
             posAux = anterior[posAux];
         }
         return result;
     }
-    
+
     public int verticeDesconocidoMenorDist(int[] minimos, boolean[] marca) {
         int minDistancia = Integer.MAX_VALUE;
         int minPos = -1;
-        
-        for(int i = 0; i < minimos.length; i++){
+
+        for (int i = 0; i < minimos.length; i++) {
             if ((!marca[i]) && (minimos[i] < minDistancia)) {
                 minDistancia = minimos[i];
                 minPos = i;
             }
         }
-        
+
         return minPos;
     }
 }
