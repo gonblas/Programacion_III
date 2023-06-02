@@ -56,7 +56,7 @@ public class DeltaTest {
         System.out.println("El numero maximo de islas que se puede recorrer con un unico boleto es " + D.maxIslasDistintas(islas)); //RTA: 5
         
         RutaMinima<String> rutMin = D.caminoMasCorto(islas, "Hawai", "Jamaica");
-        System.out.println("El camino mas corto para llegar de Hawai a Sicilia es " + rutMin.getCamino().toString()); //Si o si hay al menos un camino
+        System.out.println("El camino mas corto para llegar de Hawai a Jamaica es " + rutMin.getCamino().toString()); //Si o si hay al menos un camino
         if (rutMin.getBoletoUnico()) 
             System.out.println("Solo es necesario comprar un unico boleto.");
         else
