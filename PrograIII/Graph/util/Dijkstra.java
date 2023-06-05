@@ -11,7 +11,7 @@ public class Dijkstra<T> {
     //O(|V|^2)
     public Costo[] dijkstraSinHeap(Grafo<T> grafo, Vertice<T> v) {
         if((!grafo.listaDeVertices().incluye(v)))
-        return null;
+            return null;
         int lenght = grafo.listaDeVertices().tamanio();
         Costo[] costos = new Costo[lenght];
         boolean[] marca = new boolean[lenght];
@@ -76,7 +76,7 @@ public class Dijkstra<T> {
             Vertice<T> U = grafo.listaDeVertices().elemento(heap.poll().getPos());
             if (marca[U.posicion()])
                 continue;
-            //De aca para abajo bien
+
             marca[U.posicion()] = true;
             ListaGenerica<Arista<T>> ady = grafo.listaDeAdyacentes(U);
             ady.comenzar();

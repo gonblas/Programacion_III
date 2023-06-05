@@ -9,6 +9,11 @@ public class Costo implements Comparable<Costo>{
         this.previo = 0;
     }
 
+    public Costo(int min, int previo) {
+        this.min = min;
+        this.previo = previo;
+    }
+
     public int getMin() {
         return min;
     }
