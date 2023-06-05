@@ -1,5 +1,7 @@
 package Practicas.Practica4.Practica4_B;
-import PrograIII.BinaryTree.*;
+
+import PrograIII.BinaryTree.ArbolBinario;
+import PrograIII.BinaryTree.util.*;
 
 public class Ejercicio1y2 {
     public static void main(String[] args) {

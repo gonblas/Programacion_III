@@ -1,8 +1,11 @@
-package PrograIII.Graph;
+package PrograIII.Graph.util;
 
-import PrograIII.ListGeneric.ListaGenerica;
-import PrograIII.ListGeneric.ListaGenericaEnlazada;
-import PrograIII.ListGeneric.Cola;
+import PrograIII.GenericList.Cola;
+import PrograIII.GenericList.ListaGenerica;
+import PrograIII.GenericList.ListaGenericaEnlazada;
+import PrograIII.Graph.Arista;
+import PrograIII.Graph.Grafo;
+import PrograIII.Graph.Vertice;
 
 
 public class Recorridos<T> {

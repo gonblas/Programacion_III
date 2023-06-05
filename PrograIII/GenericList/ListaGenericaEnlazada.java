@@ -1,23 +1,23 @@
-package PrograIII.ListInt;
+package PrograIII.GenericList;
 
 /**
- * La clase ListaDeEnterosEnlazada es una ListaDeEnteros, donde los elementos de
+ * La clase ListaGenericaEnlazada es una ListaGenerica, donde los elementos de
  * la lista (nodos) referencian al siguiente elemento (nodo), por este motivo,
- * la ListaDeEnterosEnlazada no tiene límite en la cantidad de elementos que se
+ * la ListaEnlazadaGenerica  no tiene limite en la cantidad de elementos que se
  * pueden almacenar.
  * */
-public class ListaDeEnterosEnlazada extends ListaDeEnteros {
+public class ListaGenericaEnlazada<T> extends ListaGenerica<T> {
 	/* primer nodo de la lista, si la lista esta vacia, inicio es null */
-	private NodoEntero inicio;
+	private NodoGenerico<T> inicio;
 
 	/*
 	 * nodo actual que se va actualizando a medida que recorremos la lista, si
 	 * la lista esta vacia, actual es null
 	 */
-	private NodoEntero actual;
+	private NodoGenerico<T> actual;
 
 	/* ultimo nodo de la lista, si la lista esta vacia, fin es null */
-	private NodoEntero fin;
+	private NodoGenerico<T> fin;
 
 	/* cantidad de nodos en la lista */
 	private int tamanio;
@@ -26,10 +26,10 @@ public class ListaDeEnterosEnlazada extends ListaDeEnteros {
 	public void comenzar() {
 		actual = inicio;
 	}
-
+    
 	@Override
-	public Integer proximo() {
-		Integer elem = this.actual.getDato();
+	public T proximo() {
+		T elem = this.actual.getDato();
 		this.actual = this.actual.getSiguiente();
 		return elem;
 	}
@@ -40,28 +40,28 @@ public class ListaDeEnterosEnlazada extends ListaDeEnteros {
 	}
 
 	@Override
-	public Integer elemento(int pos) {
+	public T elemento(int pos) {
 		if (pos < 0 || pos > this.tamanio() - 1) // no es posicion valida
 			return null;
-		NodoEntero n = this.inicio;
+		NodoGenerico<T> n = this.inicio;
 		while (pos-- > 0)
 			n = n.getSiguiente();
 		return n.getDato();
 	}
 
 	@Override
-	public boolean agregarEn(Integer elem, int pos) {
+	public boolean agregarEn(T elem, int pos) {
 		if (pos < 0 || pos > this.tamanio()) // posicion no valida
 			return false;
 		this.tamanio++;
-		NodoEntero aux = new NodoEntero();
+		NodoGenerico<T> aux = new NodoGenerico<T>();
 		aux.setDato(elem);
 		if (pos == 0) { // inserta al principio
 			aux.setSiguiente(inicio);
 			this.inicio = aux;
 		} else {
-			NodoEntero n = this.inicio;
-			NodoEntero ant = null;
+			NodoGenerico<T> n = this.inicio;
+			NodoGenerico<T> ant = null;
 			int posActual = 0;
 			while (!(n == null) && (posActual < pos)) {
 				ant = n;
@@ -78,8 +78,8 @@ public class ListaDeEnterosEnlazada extends ListaDeEnteros {
 	}
 
 	@Override
-	public boolean agregarInicio(Integer elem) {
-		NodoEntero aux = new NodoEntero();
+	public boolean agregarInicio(T elem) {
+		NodoGenerico<T> aux = new NodoGenerico<T>();
 		aux.setDato(elem);
 
 		if (this.inicio == null) {
@@ -95,8 +95,8 @@ public class ListaDeEnterosEnlazada extends ListaDeEnteros {
 	}
 
 	@Override
-	public boolean agregarFinal(Integer elem) {
-		NodoEntero aux = new NodoEntero();
+	public boolean agregarFinal(T elem) {
+		NodoGenerico<T> aux = new NodoGenerico<T>();
 		aux.setDato(elem);
 		if (this.inicio == null) {
 			this.inicio = aux;
@@ -111,9 +111,9 @@ public class ListaDeEnterosEnlazada extends ListaDeEnteros {
 	}
 
 	@Override
-	public boolean eliminar(Integer elem) {
-		NodoEntero n = this.inicio;
-		NodoEntero ant = null;
+	public boolean eliminar(T elem) {
+		NodoGenerico<T> n = this.inicio;
+		NodoGenerico<T> ant = null;
 		while ((n != null) && (!n.getDato().equals(elem))) {
 			ant = n;
 			n = n.getSiguiente();
@@ -140,8 +140,8 @@ public class ListaDeEnterosEnlazada extends ListaDeEnteros {
 			this.inicio = this.inicio.getSiguiente();
 			return true;
 		}
-		NodoEntero n = this.inicio;
-		NodoEntero ant = null;
+		NodoGenerico<T> n = this.inicio;
+		NodoGenerico<T> ant = null;
 		while (!(n == null) && (pos > 0)) {
 			pos--;
 			ant = n;
@@ -154,8 +154,8 @@ public class ListaDeEnterosEnlazada extends ListaDeEnteros {
 	}
 
 	@Override
-	public boolean incluye(Integer elem) {
-		NodoEntero n = this.inicio;
+	public boolean incluye(T elem) {
+		NodoGenerico<T> n = this.inicio;
 		while (!(n == null) && !(n.getDato().equals(elem)))
 			n = n.getSiguiente();
 		return !(n == null);
@@ -164,7 +164,7 @@ public class ListaDeEnterosEnlazada extends ListaDeEnteros {
 	@Override
 	public String toString() {
 		String str = "";
-		NodoEntero n = this.inicio;
+		NodoGenerico<T> n = this.inicio;
 		while (n != null) {
 			str = str + n.getDato() + " -> ";
 			n = n.getSiguiente();
@@ -183,45 +183,18 @@ public class ListaDeEnterosEnlazada extends ListaDeEnteros {
 	public boolean esVacia() {
 		return this.tamanio() == 0;
 	}
-
-	public ListaDeEnterosEnlazada ordenar() {
-		ListaDeEnterosEnlazada resultado = new ListaDeEnterosEnlazada();
-		this.comenzar();
-		ListaDeEnterosEnlazada aux = new ListaDeEnterosEnlazada();
-		while (!this.fin()) {
-			aux.agregarFinal(this.proximo());
-		}
-		Integer dato=null;
-		while (!aux.esVacia()) {
-		    Integer min = Integer.MAX_VALUE;
-		    aux.comenzar();
-		    while (!aux.fin()) {
-			    dato = aux.proximo();
-			    if (dato < min)
-			        min = dato;
-		    }
-		    aux.eliminar(min);
-		    resultado.agregarFinal(min);
-		}
-		return resultado;
-	}
-
-	public ListaDeEnterosEnlazada cambiarOrdenado(ListaDeEnterosEnlazada listaParam) {
-		this.comenzar();
-		listaParam.comenzar();
-		ListaDeEnterosEnlazada result = new ListaDeEnterosEnlazada();
-		while (!this.fin()) {
-			result.agregarFinal(this.proximo());
-		}
-		while (!listaParam.fin()) {
-			Integer d = listaParam.proximo();
-			int i = 0;
-			while (i<result.tamanio() && d > result.elemento(i)) {
-				i++;
-			}
-			result.agregarEn(d, i);
-		}
+    
+    //Para N elementos de la lista debo recorrer N elementos de la misma.
+	public ListaGenericaEnlazada<T> invertir() {
+		ListaGenericaEnlazada<T> result = new ListaGenericaEnlazada<>();
+		recorrer(this.inicio, result);
 		return result;
 	}
-}
 
+	private void recorrer(NodoGenerico<T> x, ListaGenericaEnlazada<T> result) {
+		if (x != null) {
+			recorrer(x.getSiguiente(), result);
+			result.agregarFinal(x.getDato());
+		}
+	}
+}

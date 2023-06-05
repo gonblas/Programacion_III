@@ -1,7 +1,7 @@
 package PrograIII.Graph;
 
-import PrograIII.ListGeneric.ListaGenerica;
-import PrograIII.ListGeneric.ListaGenericaEnlazada;
+import PrograIII.GenericList.ListaGenerica;
+import PrograIII.GenericList.ListaGenericaEnlazada;
 
 public class GrafoImplListAdy<T> implements Grafo<T> {
     private ListaGenerica<Vertice<T>>vertices = new ListaGenericaEnlazada<Vertice<T>>();

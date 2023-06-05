@@ -2,9 +2,9 @@ package Practicas.Practica7.Practica7_A.Ejercicio6;
 
 import PrograIII.Graph.VerticeImplListAdy;
 import PrograIII.Graph.Vertice;
+import PrograIII.GenericList.ListaGenerica;
 import PrograIII.Graph.Grafo;
 import PrograIII.Graph.GrafoImplListAdy;
-import PrograIII.ListGeneric.ListaGenerica;
 
 
 public class MapaTest {

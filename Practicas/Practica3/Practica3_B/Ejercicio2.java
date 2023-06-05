@@ -1,6 +1,6 @@
 package Practicas.Practica3.Practica3_B;
 
-import PrograIII.ListGeneric.ListaGenericaEnlazada;
+import PrograIII.GenericList.ListaGenericaEnlazada;
 
 public class Ejercicio2 {
     public static void main(String[] args) {

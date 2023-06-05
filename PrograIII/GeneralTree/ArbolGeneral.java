@@ -1,8 +1,8 @@
 package PrograIII.GeneralTree;
 
-import PrograIII.ListGeneric.ListaGenerica;
-import PrograIII.ListGeneric.ListaGenericaEnlazada;
-import PrograIII.ListGeneric.Cola;
+import PrograIII.GenericList.Cola;
+import PrograIII.GenericList.ListaGenerica;
+import PrograIII.GenericList.ListaGenericaEnlazada;
 
 public class ArbolGeneral<T> {
 

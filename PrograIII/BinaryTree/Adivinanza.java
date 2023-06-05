@@ -1,6 +1,6 @@
 package PrograIII.BinaryTree;
 
-import PrograIII.ListGeneric.ListaGenericaEnlazada;
+import PrograIII.GenericList.ListaGenericaEnlazada;
 
 public class Adivinanza {
     public static ListaGenericaEnlazada<String> secuenciaConMasPreguntas(ArbolBinario<String> abinario) {

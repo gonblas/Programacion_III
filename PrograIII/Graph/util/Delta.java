@@ -1,11 +1,13 @@
-package Practicas.Practica7.Practica7_A.Ejercicio8;
+package PrograIII.Graph.util;
 
 import java.util.Arrays;
+
+import Practicas.Practica7.Practica7_A.Ejercicio8.RutaMinima;
 import PrograIII.Graph.Grafo;
+import PrograIII.GenericList.ListaGenerica;
+import PrograIII.GenericList.ListaGenericaEnlazada;
 import PrograIII.Graph.Arista;
 import PrograIII.Graph.Vertice;
-import PrograIII.ListGeneric.ListaGenerica;
-import PrograIII.ListGeneric.ListaGenericaEnlazada;
 
 public class Delta {
 

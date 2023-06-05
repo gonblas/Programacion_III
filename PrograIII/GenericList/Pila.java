@@ -1,4 +1,4 @@
-package PrograIII.ListGeneric;
+package PrograIII.GenericList;
 
 public class Pila<T> {
     private ListaGenericaEnlazada<T> pila;

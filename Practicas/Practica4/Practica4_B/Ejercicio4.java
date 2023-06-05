@@ -1,8 +1,8 @@
 package Practicas.Practica4.Practica4_B;
 
 import PrograIII.BinaryTree.ArbolBinario;
-import PrograIII.BinaryTree.Utiles;
-import PrograIII.ListGeneric.ListaGenericaEnlazada;
+import PrograIII.BinaryTree.util.Utiles;
+import PrograIII.GenericList.ListaGenericaEnlazada;
 
 public class Ejercicio4 {
     public static void main(String[] args) {

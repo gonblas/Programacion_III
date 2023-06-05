@@ -1,7 +1,7 @@
 package Practicas.Practica5.Practica5_B.Ejercicio2;
 
 import PrograIII.GeneralTree.ArbolGeneral;
-import PrograIII.ListGeneric.ListaGenerica;
+import PrograIII.GenericList.ListaGenerica;
 
 
 public class RedDeAguaPotable {

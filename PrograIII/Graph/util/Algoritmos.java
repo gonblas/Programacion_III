@@ -1,7 +1,7 @@
-package Practicas.Practica7.Practica7_A.Ejercicio7;
+package PrograIII.Graph.util;
 
 import PrograIII.Graph.Grafo;
-import PrograIII.ListGeneric.ListaGenerica;
+import PrograIII.GenericList.ListaGenerica;
 import PrograIII.Graph.Arista;
 import PrograIII.Graph.Vertice;
 import java.util.Arrays;

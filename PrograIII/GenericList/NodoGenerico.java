@@ -1,4 +1,4 @@
-package PrograIII.ListGeneric;
+package PrograIII.GenericList;
 /**
  * Esta clase representa un nodo de la lista de enteros enlazada.
  * */

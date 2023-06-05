@@ -1,6 +1,6 @@
 package PrograIII.BinaryTree;
 
-import PrograIII.ListGeneric.*;
+import PrograIII.GenericList.*;
 
 public class ArbolBinario<T> {
 	private T dato;

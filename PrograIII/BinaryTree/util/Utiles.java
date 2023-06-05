@@ -1,7 +1,9 @@
-package PrograIII.BinaryTree;
-import PrograIII.ListGeneric.Cola;
-// import PrograIII.BinaryTree.ArbolBinario;
-import PrograIII.ListGeneric.ListaGenericaEnlazada;
+package PrograIII.BinaryTree.util;
+
+import PrograIII.BinaryTree.ArbolBinario;
+import PrograIII.GenericList.Cola;
+import PrograIII.GenericList.ListaGenericaEnlazada;
+
 
 public class Utiles {
     public static int sumaMaximaVertical(ArbolBinario<Integer> tree) {

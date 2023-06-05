@@ -1,6 +1,6 @@
 package Practicas.Practica3.Practica3_B;
 
-import PrograIII.ListGeneric.Pila;
+import PrograIII.GenericList.Pila;
 
 
 public class Ejercicio3 {

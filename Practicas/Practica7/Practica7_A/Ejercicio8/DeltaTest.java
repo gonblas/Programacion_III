@@ -1,5 +1,6 @@
 package Practicas.Practica7.Practica7_A.Ejercicio8;
 
+import PrograIII.Graph.util.Delta;
 import PrograIII.Graph.VerticeImplListAdy;
 import PrograIII.Graph.Vertice;
 import PrograIII.Graph.Grafo;

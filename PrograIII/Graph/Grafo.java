@@ -1,6 +1,6 @@
 package PrograIII.Graph;
 
-import PrograIII.ListGeneric.ListaGenerica;
+import PrograIII.GenericList.ListaGenerica;
 
 
 public interface Grafo<T> {

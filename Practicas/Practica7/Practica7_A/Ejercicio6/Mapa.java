@@ -1,9 +1,9 @@
 package Practicas.Practica7.Practica7_A.Ejercicio6;
 
 import PrograIII.Graph.Grafo;
-import PrograIII.ListGeneric.ListaGenerica;
-import PrograIII.ListGeneric.ListaGenericaEnlazada;
 import PrograIII.Graph.Vertice;
+import PrograIII.GenericList.ListaGenerica;
+import PrograIII.GenericList.ListaGenericaEnlazada;
 import PrograIII.Graph.Arista;
 
 
@@ -191,43 +191,53 @@ public class Mapa {
         Resultado<String> aux = new Resultado<String>(new ListaGenericaEnlazada<>(), 0);
         Resultado<String> result = new Resultado<String>(new ListaGenericaEnlazada<>(), 0);
         boolean[] marca = new boolean[grafo.listaDeVertices().tamanio()];
-        int i;
-        for (i = 0; i < marca.length; i++) {
-            if (grafo.listaDeVertices().elemento(i).dato().equals(ciudad1)) {
-                break;
-            }
+        ListaGenerica<Vertice<String>> vertices = grafo.listaDeVertices();
+        Vertice<String> vOrigen = null, vDestino = null;
+        vertices.comenzar();
+        while(!vertices.fin() && (!(vOrigen != null) || !(vDestino != null))){
+            Vertice<String> V = vertices.proximo();
+            if (V.dato().equals(ciudad1)) 
+                vOrigen = V;
+            if(V.dato().equals(ciudad2))
+                vDestino = V;
         }
-        if (i < marca.length) //Si la ciudad1 se encuentra en el grafo
-            caminoConMenorCargaDeCombustible(i, grafo, ciudad2, marca, aux, result, tanqueAuto, tanqueAuto);
+        if (vOrigen != null && vDestino != null) {
+            result.setCant(Integer.MAX_VALUE);
+            caminoConMenorCargaDeCombustible(vOrigen, vDestino, grafo, marca, aux, result, tanqueAuto, tanqueAuto);
+        }
         return result.getList();
     }
 
-    private void caminoConMenorCargaDeCombustible(int i, Grafo<String> grafo, String ciudad2, boolean[] marca, Resultado<String> aux, Resultado<String> result, int tanqueAuto, int tanqueAct) {
-        Vertice<String> v = grafo.listaDeVertices().elemento(i);
-        marca[i] = true;
-        aux.getList().agregarFinal(v.dato());
-        if (v.dato().equals(ciudad2)) {
+    private void caminoConMenorCargaDeCombustible(Vertice<String> vOrigen, Vertice<String> vDestino,Grafo<String> grafo, boolean[] marca, Resultado<String> aux, Resultado<String> result, int tanqueAuto, int tanqueAct) {
+        marca[vOrigen.posicion()] = true;
+        aux.getList().agregarFinal(vOrigen.dato());
+        if (vOrigen.dato().equals(vDestino.dato())) {
             if (aux.getCant() < result.getCant()) {
                 result.copyList(aux.getList());
                 result.setCant(aux.getCant());
             }
-        } else {
-            ListaGenerica<Arista<String>> ady = grafo.listaDeAdyacentes(v);
-            ady.comenzar();
-            while (!ady.fin()) {
-                Arista<String> a = ady.proximo();         
-                int j = a.verticeDestino().posicion();
-                if (!marca[j]) {
-                    if (tanqueAct - a.peso() < 0) {
-                        aux.setCant(aux.getCant() + 1);
-                        caminoConMenorCargaDeCombustible(j, grafo, ciudad2, marca, aux, result, tanqueAuto, tanqueAuto-a.peso());
-                    }
-                    else
-                        caminoConMenorCargaDeCombustible(j, grafo, ciudad2, marca, aux, result, tanqueAuto, tanqueAct-a.peso());
-                    marca[j] = false;
-                    aux.getList().eliminarEn(aux.getList().tamanio()-1);
+            return;
+        }
+
+        ListaGenerica<Arista<String>> ady = grafo.listaDeAdyacentes(vOrigen);
+        ady.comenzar();
+        while (!ady.fin()) {
+            Arista<String> a = ady.proximo();
+            Vertice<String> V = a.verticeDestino();     
+            if (!marca[V.posicion()]) {
+                if (tanqueAct - a.peso() <= 0) {
+                    if(a.peso() > tanqueAuto)
+                        continue;
+                    aux.setCant(aux.getCant() + 1);
+                    caminoConMenorCargaDeCombustible(V, vDestino, grafo, marca, aux, result, tanqueAuto, tanqueAuto-a.peso());
+                    aux.setCant(aux.getCant() - 1);
                 }
+                else
+                    caminoConMenorCargaDeCombustible(V, vDestino, grafo, marca, aux, result, tanqueAuto, tanqueAct-a.peso());
+                marca[V.posicion()] = false;
+                aux.getList().eliminarEn(aux.getList().tamanio()-1);
             }
         }
     }
 }
+

@@ -1,5 +1,5 @@
 package Practicas.Practica3.Practica3_B;
-import PrograIII.ListGeneric.Cola;
+import PrograIII.GenericList.Cola;
 
 public class Ejercicio5 {
     public static void main(String[] args) {

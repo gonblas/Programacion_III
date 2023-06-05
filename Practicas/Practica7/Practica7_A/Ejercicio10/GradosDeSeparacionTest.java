@@ -1,5 +1,6 @@
 package Practicas.Practica7.Practica7_A.Ejercicio10;
 
+import PrograIII.Graph.util.GradosDeSeparacion;
 import PrograIII.Graph.VerticeImplListAdy;
 import PrograIII.Graph.Vertice;
 import PrograIII.Graph.Grafo;
@@ -29,26 +30,37 @@ public class GradosDeSeparacionTest {
 
         red.conectar(v1, v2, 1);
         red.conectar(v2, v1, 1);
+
         red.conectar(v1, v4, 1);
         red.conectar(v4, v1, 1);
+
         red.conectar(v1, v3, 1);
         red.conectar(v3, v1, 1);
+
         red.conectar(v2, v5, 1);
         red.conectar(v5, v2, 1);
+
         red.conectar(v2, v4, 1);
         red.conectar(v4, v2, 1);
+
         red.conectar(v4, v3, 1);
         red.conectar(v3, v4, 1);
+
         red.conectar(v4, v7, 1);
         red.conectar(v7, v4, 1);
+
         red.conectar(v3, v6, 1);
         red.conectar(v6, v3, 1);
+
         red.conectar(v5, v7, 1);
         red.conectar(v7, v5, 1);
+
         red.conectar(v7, v8, 1);
         red.conectar(v8, v7, 1);
+
         red.conectar(v8, v9, 1);
         red.conectar(v9, v8, 1);
+        
         red.conectar(v8, v10, 1);
         red.conectar(v10, v8, 1);
         

@@ -1,11 +1,11 @@
-package Practicas.Practica7.Practica7_A.Ejercicio10;
+package PrograIII.Graph.util;
 
 import PrograIII.Graph.Grafo;
+import PrograIII.GenericList.Cola;
+import PrograIII.GenericList.ListaGenerica;
 import PrograIII.Graph.Arista;
 import PrograIII.Graph.Vertice;
-import PrograIII.ListGeneric.ListaGenerica;
-import PrograIII.ListGeneric.Cola;
-import java.util.Arrays;
+
 
 public class GradosDeSeparacion {
     public int maximoGradoDeSeparacion(Grafo<String> grafo) {
@@ -23,24 +23,31 @@ public class GradosDeSeparacion {
         ListaGenerica<Arista<String>> ady = null;
         Cola<Vertice<String>> cola = new Cola<Vertice<String>>();
         boolean[] marca = new boolean[grafo.listaDeVertices().tamanio()];
-        int[] distancias = new int[grafo.listaDeVertices().tamanio()];
-        cola.encolar(grafo.listaDeVertices().elemento(i));
+        int cant = 0;
         marca[i] = true;
+        cola.encolar(grafo.listaDeVertices().elemento(i));
+        cola.encolar(null);
         while (!cola.esVacia()) {
             Vertice<String> V = cola.desencolar();
-            ady = grafo.listaDeAdyacentes(V);
-            ady.comenzar();
-            while (!ady.fin()) {
-                Arista<String> arista = ady.proximo();
-                int j = arista.verticeDestino().posicion();
-                if (!marca[j]) {
-                    marca[j] = true;
-                    cola.encolar(arista.verticeDestino());
-                    distancias[arista.verticeDestino().posicion()] = distancias[V.posicion()] + 1;
+            if (V != null) {
+                ady = grafo.listaDeAdyacentes(V);
+                ady.comenzar();
+                while (!ady.fin()) {
+                    Arista<String> arista = ady.proximo();
+                    Vertice<String> W = arista.verticeDestino();
+                    if (!marca[W.posicion()]) {
+                        marca[W.posicion()] = true;
+                        cola.encolar(W);
+                    }
                 }
             }
+            else 
+                if(!cola.esVacia()){
+                    cant++;
+                    cola.encolar(null);
+                }
         }
-        return Arrays.stream(distancias).max().getAsInt();
+        return cant;
     }
     
 }

@@ -1,7 +1,7 @@
 package Practicas.Practica7.Practica7_A.Ejercicio8;
 
-import PrograIII.ListGeneric.ListaGenerica;
-import PrograIII.ListGeneric.ListaGenericaEnlazada;
+import PrograIII.GenericList.ListaGenerica;
+import PrograIII.GenericList.ListaGenericaEnlazada;
 
 public class RutaMinima<T> {
     private ListaGenerica<T> camino;

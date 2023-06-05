@@ -1,7 +1,7 @@
 package Practicas.Practica7.Practica7_A.Ejercicio6;
 
-import PrograIII.ListGeneric.ListaGenerica;
-import PrograIII.ListGeneric.ListaGenericaEnlazada;
+import PrograIII.GenericList.ListaGenerica;
+import PrograIII.GenericList.ListaGenericaEnlazada;
 
 public class Resultado<T> {
     private ListaGenerica<T> list;
