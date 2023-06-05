@@ -12,16 +12,16 @@ public class Dijkstra<T> {
     public Costo[] dijkstraSinHeap(Grafo<T> grafo, Vertice<T> v) {
         if((!grafo.listaDeVertices().incluye(v)))
             return null;
-        int lenght = grafo.listaDeVertices().tamanio();
-        Costo[] costos = new Costo[lenght];
-        boolean[] marca = new boolean[lenght];
+        int length = grafo.listaDeVertices().tamanio();
+        Costo[] costos = new Costo[length];
+        boolean[] marca = new boolean[length];
 
-        for (int i = 0; i < lenght; i++) {
+        for (int i = 0; i < length; i++) {
             costos[i] = new Costo();
         }
 
         costos[v.posicion()].setMin(0);
-        for (int i = 0; i < lenght; i++){
+        for (int i = 0; i < length; i++){
             int pos = verticeDesconocidoMenorDist(costos, marca);
             if(pos == -1)
                 break;
@@ -58,14 +58,14 @@ public class Dijkstra<T> {
     
     //O((|V|+|E|)log|V|)  -> |V|+|E| del recorrido y log|V| para la heap
     public Costo[] dijkstraConHeap(Grafo<T> grafo, Vertice<T> v) {
-        int lenght = grafo.listaDeVertices().tamanio();
-        Costo[] costos = new Costo[lenght];
+        int length = grafo.listaDeVertices().tamanio();
+        Costo[] costos = new Costo[length];
         if ((!grafo.listaDeVertices().incluye(v)))
             return null;
-        boolean[] marca = new boolean[lenght];
+        boolean[] marca = new boolean[length];
         PriorityQueue<CostoHeap<T>> heap = new PriorityQueue<CostoHeap<T>>();
 
-        for (int i = 0; i < lenght; i++) {
+        for (int i = 0; i < length; i++) {
             costos[i] = new Costo();
         }
 
@@ -110,17 +110,17 @@ public class Dijkstra<T> {
     public CostoTodosMinimos[] dijkstraTodosMinimos(Grafo<T> grafo, Vertice<T> v) {
         if ((!grafo.listaDeVertices().incluye(v)))
             return null;
-        int lenght = grafo.listaDeVertices().tamanio();
-        CostoTodosMinimos[] costos = new CostoTodosMinimos[lenght];
-        boolean[] marca = new boolean[lenght];
+        int length = grafo.listaDeVertices().tamanio();
+        CostoTodosMinimos[] costos = new CostoTodosMinimos[length];
+        boolean[] marca = new boolean[length];
 
-        for (int i = 0; i < lenght; i++) {
+        for (int i = 0; i < length; i++) {
             costos[i] = new CostoTodosMinimos();
         }
 
         costos[v.posicion()].setMin(0);
         costos[v.posicion()].setCaminos(1);
-        for (int i = 0; i < lenght; i++) {
+        for (int i = 0; i < length; i++) {
             int pos = verticeDesconocidoMenorDist(costos, marca);
             if (pos == -1)
                 break;
