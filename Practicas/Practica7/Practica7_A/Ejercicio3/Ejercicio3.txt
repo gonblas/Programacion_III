@@ -6,7 +6,7 @@ a. Bajo qué condiciones usaría una Matriz de Adyacencias en lugar de una Lista
 Adyacencias para representar un grafo. Y una Lista de Adyacencias en lugar de una Matriz
 de Adyacencias. Fundamentar.
 
-RTA: Utilizaria una matriz de adyacencia si el grafo a representar es un grafo denso (|E|≈|V|×|V|) o cuando priorizamos el acceso a un vertice o arista (ya que el acceso es constante). Utilizaria una lista de adyacencia si el grafo a representar no es un grafo denso ya que la matriz en este caso almacenaria muchos valores 0 en la matriz, algo que no queremos almacenar idealmente.
+RTA: Utilizaria una matriz de adyacencia si el grafo a representar es un grafo denso (|E|≈|V|×|V|) o cuando priorizamos el acceso a un vertice o arista (ya que el acceso es constante). Utilizaria una lista de adyacencia si el grafo a representar no es un grafo denso o grafo liviano ya que la matriz en este caso almacenaria muchos valores 0 en la matriz, algo que no queremos almacenar idealmente.
 
 b. ¿En función de qué parámetros resulta apropiado realizar la estimación del orden de
 ejecución para algoritmos sobre grafos densos? ¿Y para algoritmos sobre grafos dispersos?

@@ -223,21 +223,23 @@ public class Mapa {
         ady.comenzar();
         while (!ady.fin()) {
             Arista<String> a = ady.proximo();
-            Vertice<String> V = a.verticeDestino();     
+            Vertice<String> V = a.verticeDestino();
             if (!marca[V.posicion()]) {
                 if (tanqueAct - a.peso() <= 0) {
-                    if(a.peso() > tanqueAuto)
+                    if (a.peso() > tanqueAuto)
                         continue;
                     aux.setCant(aux.getCant() + 1);
-                    caminoConMenorCargaDeCombustible(V, vDestino, grafo, marca, aux, result, tanqueAuto, tanqueAuto-a.peso());
+                    caminoConMenorCargaDeCombustible(V, vDestino, grafo, marca, aux, result, tanqueAuto,
+                            tanqueAuto - a.peso());
                     aux.setCant(aux.getCant() - 1);
-                }
-                else
-                    caminoConMenorCargaDeCombustible(V, vDestino, grafo, marca, aux, result, tanqueAuto, tanqueAct-a.peso());
-                marca[V.posicion()] = false;
-                aux.getList().eliminarEn(aux.getList().tamanio()-1);
+                } else
+                    caminoConMenorCargaDeCombustible(V, vDestino, grafo, marca, aux, result, tanqueAuto,
+                            tanqueAct - a.peso());
+                //aca
             }
         }
+        marca[vOrigen.posicion()] = false;
+        aux.getList().eliminarEn(aux.getList().tamanio()-1);
     }
 }
 
