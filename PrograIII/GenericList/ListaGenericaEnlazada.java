@@ -183,6 +183,16 @@ public class ListaGenericaEnlazada<T> extends ListaGenerica<T> {
 	public boolean esVacia() {
 		return this.tamanio() == 0;
 	}
+
+    @Override
+	public ListaGenerica<T> clonar(){
+		ListaGenerica<T> nueva = new ListaGenericaEnlazada<T>();
+		comenzar();
+		while (!fin()) {
+			nueva.agregarFinal(this.proximo());
+		}
+		return nueva;
+	}
     
     //Para N elementos de la lista debo recorrer N elementos de la misma.
 	public ListaGenericaEnlazada<T> invertir() {
