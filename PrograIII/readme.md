@@ -31,7 +31,7 @@ vamos a agregar. Si pudo eliminarlo devuelve true, false en caso contrario.
 
 #### ***NodoEntero:** Esta clase representa un nodo de la lista de enteros. Solo tiene los getters y setters.
 ___
-### ***ListGeneric***
+### ***GenericList***
 #### **ListaGenerica:** Lista de un tipo de dato generico.
 - **comenzar():** Permite posicionarse al principio de la lista.
 - **proximo():** Permite avanzar al proximo elemento de lista devolviendo antes el elemento de la actual posicion.
@@ -106,7 +106,7 @@ ___
 - **esVacio():** Devuelve true si el arbol es vacio (se toma al arbol con raiz como el nodo que estamos recorriendo), false en caso contrario. 
 - **eliminarHijo(ArbolGeneral<T> hijo):** Elimina un hijo pasado por parametros si el mismo es un hijo.
 - **preOrden():** Recorre e imprime el arbol en preorden. 
-- **altura():** 
+- **altura():** Retorna la altura del arbol.
 - **nivel(T dato):** Devuelve el nivel del nodo encontrado en caso afirmativo, en caso contrario devuelve false.
 - **ancho():** Devuelve el ancho maximo de un arbol.
 - **include(T dato):** Devuelve true si el dato recibido se encuentra en el arbol, false en caso contrario.
@@ -128,8 +128,8 @@ no exista en el Grafo.
 - **desConectar(Vertice<T> origen, Vertice<T> destino):** Desconecta el vértice origen con el destino. Verifica que ambos vértices y la conexión origen->destino existan, caso contrario no realiza ninguna desconexión. En caso de existir la conexión destino -> origen, ésta permanece sin cambios.
 - **esAdyacente(Vertice<T> origen, Vertice<T> destino):** Retorna true si origen es adyacente a destino. False en caso contrario.
 - **esVacio():** Retorna true en caso que el grafo no contenga ningún vértice. False en caso contrario.
-- **listaDeVertices():** /Retorna la lista con todos los vértices del grafo.
-- **peso(Vertice<T> origen, Vertice<T> destino):** /Retorna el peso de la conexión origen -->destino . Si no existiera la conexión retorna 0.
+- **listaDeVertices():** Retorna la lista con todos los vértices del grafo.
+- **peso(Vertice<T> origen, Vertice<T> destino):** Retorna el peso de la conexión origen -->destino . Si no existiera la conexión retorna 0.
 - **listaDeAdyacentes(Vertice<T> v):**  Retorna la lista de adyacentes de un vértice.
 - **vertice(int posicion):** Retorna el vértice dada su posición.
 #### **GrafoImplListAdy:** Clase que representa un objeto de tipo grafo implementado con listas de adyacencia. Al implementar la interfaz **Grafo** implementa todos sus metodos.
